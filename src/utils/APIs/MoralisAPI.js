@@ -35,3 +35,27 @@ export const getWalletNativeCrossChainBalance = async (walletAddress) => {
   })
   return nativeBalanceList;
 };
+
+export const getWalletTokenTransactions = async (walletAddress, chain) => {
+  const json = await fetch(`https://deep-index.moralis.io/api/v2/${walletAddress}/erc20/transfers?chain=${chain}`, options)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error))
+  return json;
+};
+
+export const getWalletNativeTransactions = async (walletAddress, chain) => {
+  const json = await fetch(`https://deep-index.moralis.io/api/v2/${walletAddress}?chain=${chain}`, options)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error))
+  return json;
+};
+
+export const getTokenMetadata = async (contractAddress) => {
+  const json = await fetch(`https://deep-index.moralis.io/api/v2/erc20/metadata?chain=bsc&addresses=${contractAddress}`, options)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error))
+  return json
+}

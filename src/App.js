@@ -4,7 +4,8 @@ import ToastContainer from './components/Toast/ToastContainer';
 import { ToastProvider } from './context/ToastContext';
 
 import Dashboard from 'layout/Dashboard'
-import Wallet from 'layout/Wallet'
+import Wallet from 'layout/Wallet/Tokens'
+import Transactions from 'layout/Wallet/Transactions'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path='/' element={<Dashboard />} />
                 <Route path='/dashboard' element={<Dashboard />} />
                 <Route path='/wallet' element={<Wallet />} />
+                <Route path='/transactions' element={<Transactions />} />
               </Routes>
             </Sidenav>
           </BrowserRouter>

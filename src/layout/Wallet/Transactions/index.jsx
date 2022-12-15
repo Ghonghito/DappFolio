@@ -14,6 +14,7 @@ import { useWeb3React } from '@web3-react/core'
 import { getWalletNativeTransactions, getWalletTokenTransactions } from 'utils/APIs/MoralisAPI'
 
 const Index = () => {
+  document.title = 'DappFolio - ტრანზაქციები'
   const { account, active } = useWeb3React()
   const [isLoading, setIsLoading] = useState(Boolean)
   const [bscNativeTransactions, setBscNativeTransactions] = useState([])

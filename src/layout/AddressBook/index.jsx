@@ -7,6 +7,7 @@ import AddressesTable from './AddressesTable'
 import { supportedChains } from 'config'
 
 const Index = () => {
+  document.title = 'DappFolio - მისამართების წიგნი'
   const [isUpdated, setIsUpdated] = useState(0)
 
   const saveAddress = () => {

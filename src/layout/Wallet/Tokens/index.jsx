@@ -15,6 +15,7 @@ import { getWalletTokensBalance } from 'utils/APIs/MoralisAPI'
 import { useWeb3React } from '@web3-react/core'
 
 const Index = () => {
+  document.title = 'DappFolio - საფულე'
   const { account, active } = useWeb3React()
   const [isLoading, setIsLoading] = useState(Boolean)
   const [ethTokensBalance, setEthTokensBalance] = useState([])
@@ -24,7 +25,6 @@ const Index = () => {
   const [ftmTokensBalance, setFtmTokensBalance] = useState([])
   const [croTokensBalance, setcroTokensBalance] = useState([])
   const [arbitrumTokensBalance, setArbitrumTokensBalance] = useState([])
-
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }

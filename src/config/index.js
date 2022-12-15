@@ -6,6 +6,7 @@ import Fantom from 'assets/images/Blockchains/Fantom.svg'
 import Arbitrum from 'assets/images/Blockchains/Arbitrum.svg'
 import Cronos from 'assets/images/Blockchains/Cronos.svg'
 
+export const DAPP_NAME = 'DappFolio'
 
 export const supportedChains = [
   {

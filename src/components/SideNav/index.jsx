@@ -49,9 +49,8 @@ const Index = ({ children }) => {
 					<a href='/'>
 						<div className='flex items-center gap-3 cursor-pointer'>
 							<Avatar src={Logo} alt='CryptoWaveს ლოგო' className='w-9' />
-							<p className='text-black dark:text-white text-2xl font-bold'>
-								<span className='text-primary'>Crypto</span>
-								Wave
+							<p className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-violet text-clip'>
+								DappFolio
 							</p>
 						</div>
 					</a>

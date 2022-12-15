@@ -7,6 +7,7 @@ import Fantom from 'assets/images/Blockchains/Fantom.svg'
 import Arbitrum from 'assets/images/Blockchains/Arbitrum.svg'
 import Cronos from 'assets/images/Blockchains/Cronos.svg'
 import TransactionsTable from './TransactionsTable'
+import ConnectWalletAlert from 'components/ConnectWalletAlert'
 import { supportedChainsList } from 'config'
 import { Tab } from '@headlessui/react'
 import { useWeb3React } from '@web3-react/core'
@@ -151,69 +152,75 @@ const Index = () => {
 
   return (
     <div>
-      {!isLoading ? (
+      {active ? (
         <div>
-          <div>
-            <div className='flex flex-col md:items-center md:justify-center '>
-              <Tab.Group>
-                <div>
-                  <div>
-                    <Tab.List className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 overflow-y-auto space-x-1 rounded-xl duration-150 bg-blue-100 dark:bg-darkCard p-1'>
-                      {chains.map((x, index) => (
-                        <Tab key={index} className={({ selected }) => classNames('flex items-center gap-2 md:justify-center w-full rounded-lg py-1 px-2 md:px-4 text-sm font-medium leading-5 focus:outline-none',
-                          selected ? 'duration-150 bg-white dark:bg-primaryDark text-primary dark:text-white font-bold shadow' : 'text-zinc-500 font-bold hover:bg-white hover:text-primary')}>
-                          <div className='bg-primary p-1 rounded-lg w-[30px] h-[30px] flex items-center justify-center flex-shrink-0'>
-                            <img src={x.image} className={`${x.logoWidth}`} alt={x.name} />
-                          </div>
-                          <span className='whitespace-nowrap flex items-center gap-2'>
-                            <span className='hidden md:flex'>{x.symbol}</span>
-                            <span className='flex md:hidden'>{x.symbol}</span>
-                          </span>
-                        </Tab>
-                      ))}
-                    </Tab.List>
-                  </div>
-                  <Tab.Panels className="mt-2">
-                    <Tab.Panel>
-                      <TransactionsTable nativeTransactions={bscNativeTransactions} tokenTransactions={bscTokenTransactions} chain={supportedChainsList.bsc.networkSymbol} />
-                    </Tab.Panel>
-                  </Tab.Panels>
-                  <Tab.Panels className="mt-2">
-                    <Tab.Panel>
-                      <TransactionsTable nativeTransactions={ethNativeTransactions} tokenTransactions={ethTokenTransactions} chain={supportedChainsList.eth.networkSymbol} />
-                    </Tab.Panel>
-                  </Tab.Panels>
-                  <Tab.Panels className="mt-2">
-                    <Tab.Panel>
-                      <TransactionsTable nativeTransactions={avaxNativeTransactions} tokenTransactions={avaxTokenTransactions} chain={supportedChainsList.avax.networkSymbol} />
-                    </Tab.Panel>
-                  </Tab.Panels>
-                  <Tab.Panels className="mt-2">
-                    <Tab.Panel>
-                      <TransactionsTable nativeTransactions={maticNativeTransactions} tokenTransactions={maticTokenTransactions} chain={supportedChainsList.matic.networkSymbol} />
-                    </Tab.Panel>
-                  </Tab.Panels>
-                  <Tab.Panels className="mt-2">
-                    <Tab.Panel>
-                      <TransactionsTable nativeTransactions={ftmNativeTransactions} tokenTransactions={ftmTokenTransactions} chain={supportedChainsList.ftm.networkSymbol} />
-                    </Tab.Panel>
-                  </Tab.Panels>
-                  <Tab.Panels className="mt-2">
-                    <Tab.Panel>
-                      <TransactionsTable nativeTransactions={croNativeTransactions} tokenTransactions={croTokenTransactions} chain={supportedChainsList.cro.networkSymbol} />
-                    </Tab.Panel>
-                  </Tab.Panels>
-                  <Tab.Panels className="mt-2">
-                    <Tab.Panel>
-                      <TransactionsTable nativeTransactions={arbNativeTransactions} tokenTransactions={arbTokenTransactions} chain={supportedChainsList.arb.networkSymbol} />
-                    </Tab.Panel>
-                  </Tab.Panels>
+          {!isLoading ? (
+            <div>
+              <div>
+                <div className='flex flex-col md:items-center md:justify-center '>
+                  <Tab.Group>
+                    <div>
+                      <div>
+                        <Tab.List className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 overflow-y-auto space-x-1 rounded-xl duration-150 bg-blue-100 dark:bg-darkCard p-1'>
+                          {chains.map((x, index) => (
+                            <Tab key={index} className={({ selected }) => classNames('flex items-center gap-2 md:justify-center w-full rounded-lg py-1 px-2 md:px-4 text-sm font-medium leading-5 focus:outline-none',
+                              selected ? 'duration-150 bg-white dark:bg-primaryDark text-primary dark:text-white font-bold shadow' : 'text-zinc-500 font-bold hover:bg-white hover:text-primary')}>
+                              <div className='bg-primary p-1 rounded-lg w-[30px] h-[30px] flex items-center justify-center flex-shrink-0'>
+                                <img src={x.image} className={`${x.logoWidth}`} alt={x.name} />
+                              </div>
+                              <span className='whitespace-nowrap flex items-center gap-2'>
+                                <span className='hidden md:flex'>{x.symbol}</span>
+                                <span className='flex md:hidden'>{x.symbol}</span>
+                              </span>
+                            </Tab>
+                          ))}
+                        </Tab.List>
+                      </div>
+                      <Tab.Panels className="mt-2">
+                        <Tab.Panel>
+                          <TransactionsTable nativeTransactions={bscNativeTransactions} tokenTransactions={bscTokenTransactions} chain={supportedChainsList.bsc.networkSymbol} />
+                        </Tab.Panel>
+                      </Tab.Panels>
+                      <Tab.Panels className="mt-2">
+                        <Tab.Panel>
+                          <TransactionsTable nativeTransactions={ethNativeTransactions} tokenTransactions={ethTokenTransactions} chain={supportedChainsList.eth.networkSymbol} />
+                        </Tab.Panel>
+                      </Tab.Panels>
+                      <Tab.Panels className="mt-2">
+                        <Tab.Panel>
+                          <TransactionsTable nativeTransactions={avaxNativeTransactions} tokenTransactions={avaxTokenTransactions} chain={supportedChainsList.avax.networkSymbol} />
+                        </Tab.Panel>
+                      </Tab.Panels>
+                      <Tab.Panels className="mt-2">
+                        <Tab.Panel>
+                          <TransactionsTable nativeTransactions={maticNativeTransactions} tokenTransactions={maticTokenTransactions} chain={supportedChainsList.matic.networkSymbol} />
+                        </Tab.Panel>
+                      </Tab.Panels>
+                      <Tab.Panels className="mt-2">
+                        <Tab.Panel>
+                          <TransactionsTable nativeTransactions={ftmNativeTransactions} tokenTransactions={ftmTokenTransactions} chain={supportedChainsList.ftm.networkSymbol} />
+                        </Tab.Panel>
+                      </Tab.Panels>
+                      <Tab.Panels className="mt-2">
+                        <Tab.Panel>
+                          <TransactionsTable nativeTransactions={croNativeTransactions} tokenTransactions={croTokenTransactions} chain={supportedChainsList.cro.networkSymbol} />
+                        </Tab.Panel>
+                      </Tab.Panels>
+                      <Tab.Panels className="mt-2">
+                        <Tab.Panel>
+                          <TransactionsTable nativeTransactions={arbNativeTransactions} tokenTransactions={arbTokenTransactions} chain={supportedChainsList.arb.networkSymbol} />
+                        </Tab.Panel>
+                      </Tab.Panels>
+                    </div>
+                  </Tab.Group>
                 </div>
-              </Tab.Group>
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
-      ) : null}
+      ) : (
+        <ConnectWalletAlert />
+      )}
     </div>
   )
 }

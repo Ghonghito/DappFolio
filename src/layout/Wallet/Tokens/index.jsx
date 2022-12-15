@@ -8,9 +8,9 @@ import Arbitrum from 'assets/images/Blockchains/Arbitrum.svg'
 import Cronos from 'assets/images/Blockchains/Cronos.svg'
 import TokenBalancesTable from './TokenBalancesTable'
 import NativeBalances from '../NativeBalances'
-import ConnectButton from 'components/WalletConnection/ConnectButton'
 import { supportedChainsList } from 'config'
 import { Tab } from '@headlessui/react'
+import ConnectWalletAlert from 'components/ConnectWalletAlert'
 import { getWalletTokensBalance } from 'utils/APIs/MoralisAPI'
 import { useWeb3React } from '@web3-react/core'
 
@@ -185,9 +185,7 @@ const Index = () => {
           ) : null}
         </div>
       ) : (
-        <div>
-          <ConnectButton />
-        </div>
+        <ConnectWalletAlert />
       )}
     </div>
   )

@@ -3,6 +3,7 @@ import { HiPaperAirplane } from 'react-icons/hi'
 import Modal from 'components/Modal'
 import Typography from 'components/Typography'
 import Input from 'components/Input'
+import AddressBookButton from 'components/AddresBookButton'
 import { useWeb3React } from '@web3-react/core'
 import { getChainId } from 'utils/WalletHelpers'
 
@@ -38,7 +39,10 @@ const Send = ({ data, chain, ...rest }) => {
               <Input placeholder='რაოდენობა' className='w-full md:w-[250px]w-[250px] mt-1 placeholder:text-zinc-400' />
             </div>
             <div className='mt-2'>
-              <Input placeholder='მიმღების მისამართი' className='w-full md:w-[250px] placeholder:text-zinc-400' />
+              <div className='flex items-center gap-2'>
+                <Input id='reciverAddress' placeholder='მიმღების მისამართი' className='w-full md:w-[250px] placeholder:text-zinc-400' />
+                <AddressBookButton inputId='reciverAddress' />
+              </div>
             </div>
           </div>
           <div className='flex items-center justify-between mt-2 gap-2'>

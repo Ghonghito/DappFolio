@@ -6,6 +6,7 @@ import { ToastProvider } from './context/ToastContext';
 import Dashboard from 'layout/Dashboard'
 import Wallet from 'layout/Wallet/Tokens'
 import Transactions from 'layout/Wallet/Transactions'
+import AddressBook from 'layout/AddressBook'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path='/dashboard' element={<Dashboard />} />
                 <Route path='/wallet' element={<Wallet />} />
                 <Route path='/transactions' element={<Transactions />} />
+                <Route path='/addressbook' element={<AddressBook />} />
               </Routes>
             </Sidenav>
           </BrowserRouter>

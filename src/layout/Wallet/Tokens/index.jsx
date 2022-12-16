@@ -8,6 +8,7 @@ import Arbitrum from 'assets/images/Blockchains/Arbitrum.svg'
 import Cronos from 'assets/images/Blockchains/Cronos.svg'
 import TokenBalancesTable from './TokenBalancesTable'
 import NativeBalances from '../NativeBalances'
+import LoadingAnimation from 'components/LoadingAnimation'
 import { supportedChainsList } from 'config'
 import { Tab } from '@headlessui/react'
 import ConnectWalletAlert from 'components/ConnectWalletAlert'
@@ -182,7 +183,9 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          ) : null}
+          ) : (
+            <LoadingAnimation />
+          )}
         </div>
       ) : (
         <ConnectWalletAlert />

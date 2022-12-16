@@ -8,6 +8,7 @@ import Arbitrum from 'assets/images/Blockchains/Arbitrum.svg'
 import Cronos from 'assets/images/Blockchains/Cronos.svg'
 import TransactionsTable from './TransactionsTable'
 import ConnectWalletAlert from 'components/ConnectWalletAlert'
+import LoadingAnimation from 'components/LoadingAnimation'
 import { supportedChainsList } from 'config'
 import { Tab } from '@headlessui/react'
 import { useWeb3React } from '@web3-react/core'
@@ -217,7 +218,9 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          ) : null}
+          ) : (
+            <LoadingAnimation />
+          )}
         </div>
       ) : (
         <ConnectWalletAlert />

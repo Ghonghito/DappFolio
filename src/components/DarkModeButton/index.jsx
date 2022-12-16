@@ -26,7 +26,7 @@ const Index = () => {
 
   return (
     <div className='flex'>
-      <div onClick={() => setDarkMode()} className='duration-150 hover:scale-95 ml-2 bg-gradient-to-tr from-blue-900 to-violet shadow-md hover:bg-primaryDark bg-pos-0 hover:bg-pos-100 p-2 rounded-lg cursor-pointer'>
+      <div onClick={() => setDarkMode()} className='duration-150 hover:scale-95 bg-primary shadow-md hover:bg-primaryDark bg-pos-0 hover:bg-pos-100 p-2 rounded-lg cursor-pointer'>
         {darkModeSet === 'light' ? <MdDarkMode className='text-2xl text-white' /> : <MdDarkMode className='text-2xl text-white' />}
       </div>
     </div>

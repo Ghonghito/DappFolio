@@ -13,7 +13,7 @@ const SidenavItem = ({ menuItem }) => {
 			returnValue = (
 				<div key={key} className='mt-1'>
 					<NavLink exact='true' to={path}>
-						<div className={`${active ? 'bg-gradient-to-r from-blue-900 to-violet shadow-md' : ''} group flex items-center space-x-2 cursor-pointer duration-150 hover:bg-gradient-to-r hover:from-blue-900 hover:to-violet dark:hover:bg-darkCard w-full h-[50px] px-2 rounded-md`}>
+						<div className={`${active ? 'bg-primary shadow-md' : 'hover:bg-primary'} group flex items-center space-x-2 cursor-pointer duration-150 dark:hover:bg-darkCard w-full h-[50px] px-2 rounded-md`}>
 							<div className={`${active ? 'text-white' : 'text-zinc-700 dark:text-darkText'} duration-150 group-hover:text-white text-xl`}>
 								{icon}
 							</div>

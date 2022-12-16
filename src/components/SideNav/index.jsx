@@ -8,6 +8,7 @@ import { Transition } from '@headlessui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { menuItem } from '../../routes'
+import { dappNameGradient } from 'config'
 
 const Index = ({ children }) => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -26,8 +27,8 @@ const Index = ({ children }) => {
 					<div className='flex items-center justify-between'>
 						<a href='/'>
 							<div className='flex items-center space-x-3 cursor-pointer'>
-								<Avatar src={Logo} alt='CryptoWaveს ლოგო' className='w-9' />
-								<p className='text-black dark:text-white text-lg font-bold'><span className='text-primary'>Crypto</span>Wave</p>
+								<Avatar src={Logo} alt='DappFolio ლოგო' className='w-9' />
+								{dappNameGradient()}
 							</div>
 						</a>
 						<div className='group duration-75 hover:bg-primary rounded-lg p-2 cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
@@ -48,10 +49,8 @@ const Index = ({ children }) => {
 				<div className='hidden lg:flex h-screen sticky overflow-y-hidden top-0 flex-col p-4 duration-150 border-r border-lightHover dark:border-darkCard min-h-screen w-[300px]'>
 					<a href='/'>
 						<div className='flex items-center gap-3 cursor-pointer'>
-							<Avatar src={Logo} alt='CryptoWaveს ლოგო' className='w-9' />
-							<p className='text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-violet text-clip'>
-								DappFolio
-							</p>
+							<Avatar src={Logo} alt='DappFolio ლოგო' className='w-9' />
+							{dappNameGradient()}
 						</div>
 					</a>
 					<div className='flex flex-col h-screen mt-5'>

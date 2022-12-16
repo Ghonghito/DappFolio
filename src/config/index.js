@@ -8,6 +8,13 @@ import Cronos from 'assets/images/Blockchains/Cronos.svg'
 
 export const DAPP_NAME = 'DappFolio'
 
+export const dappNameGradient = () => {
+  const name = <p className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-violet text-clip`}>
+    DappFolio
+  </p>
+  return name
+}
+
 export const supportedChains = [
   {
     networkName: 'Ethereum',

@@ -46,7 +46,7 @@ const Index = ({ children }) => {
 				</div>
 			</Transition>
 			<div className='md:flex'>
-				<div className='hidden lg:flex h-screen sticky overflow-y-hidden top-0 flex-col p-4 duration-150 border-r border-lightHover dark:border-darkCard min-h-screen w-[300px]'>
+				<div className='hidden md:flex h-screen sticky overflow-y-hidden top-0 flex-col p-4 duration-150 border-r border-lightHover dark:border-darkCard min-h-screen w-[300px]'>
 					<a href='/'>
 						<div className='flex items-center gap-3 cursor-pointer'>
 							<Avatar src={Logo} alt='DappFolio ლოგო' className='w-9' />

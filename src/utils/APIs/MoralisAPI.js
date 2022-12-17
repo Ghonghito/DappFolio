@@ -67,3 +67,19 @@ export const getWalletNFTsBalance = async (walletAddress, chain) => {
     .catch((error) => console.log(error))
   return json;
 };
+
+export const searchTokenBySymbol = async (symbol, chain) => {
+  const json = await fetch(`https://deep-index.moralis.io/api/v2/erc20/metadata/symbols?chain=${chain}&symbols=${symbol}`, options)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error))
+  return json;
+};
+
+export const searchTokenByContractAddress = async (contractAddress, chain) => {
+  const json = await fetch(`https://deep-index.moralis.io/api/v2/erc20/metadata?chain=${chain}&addresses=${contractAddress}`, options)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error))
+  return json;
+};

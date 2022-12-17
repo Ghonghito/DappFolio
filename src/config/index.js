@@ -18,6 +18,7 @@ export const dappNameGradient = () => {
 export const supportedChains = [
   {
     networkName: 'Ethereum',
+    moralisId: 'eth',
     networkSymbol: 'eth',
     coinName: 'ETH',
     tokenProtocol: 'ERC20',
@@ -29,6 +30,7 @@ export const supportedChains = [
   },
   {
     networkName: 'Polygon',
+    moralisId: 'polygon',
     networkSymbol: 'matic',
     coinName: 'MATIC',
     tokenProtocol: 'ERC20',
@@ -40,6 +42,7 @@ export const supportedChains = [
   },
   {
     networkName: 'Smart Chain',
+    moralisId: 'bsc',
     networkSymbol: 'bsc',
     coinName: 'BNB',
     tokenProtocol: 'BEP20',
@@ -51,6 +54,7 @@ export const supportedChains = [
   },
   {
     networkName: 'Avalanche',
+    moralisId: 'avalanche',
     networkSymbol: 'avax',
     coinName: 'AVAX',
     tokenProtocol: 'ERC20',
@@ -63,6 +67,7 @@ export const supportedChains = [
   {
     networkName: 'Fantom',
     networkSymbol: 'ftm',
+    moralisId: 'fantom',
     coinName: 'FTM',
     tokenProtocol: 'ERC20',
     chainId: '0xfa',
@@ -74,6 +79,7 @@ export const supportedChains = [
   {
     networkName: 'Cronos',
     networkSymbol: 'cro',
+    moralisId: 'cronos',
     coinName: 'CRO',
     tokenProtocol: 'CRC20',
     chainId: '0x19',
@@ -84,6 +90,7 @@ export const supportedChains = [
   },
   {
     networkName: 'Arbitrum',
+    moralisId: 'arbitrum',
     networkSymbol: 'arb',
     coinName: 'ETH',
     tokenProtocol: 'ERC20',

@@ -24,15 +24,12 @@ const Index = () => {
 
     if (selectedChain !== 'selectChain') {
       if (tokenValue !== '') {
-        console.log(String(tokenValue).slice(0, 2))
         if (String(tokenValue).slice(0, 2) !== '0x') {
           const getTokens = await searchTokenBySymbol(String(tokenValue).toUpperCase(), selectedChain)
-          console.log(getTokens)
           setData(getTokens)
           setIsLoading(false)
         } else {
           const getTokens = await searchTokenByContractAddress(String(tokenValue), selectedChain)
-          console.log(getTokens)
           setData(getTokens)
           setIsLoading(false)
         }

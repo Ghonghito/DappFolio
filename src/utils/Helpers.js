@@ -26,7 +26,6 @@ export const getNFTImage = (url) => {
       return result
     } else if (String(url).includes('ipfs://')) {
       const result = String(url).replace('ipfs://', 'https://ipfs.io/ipfs/')
-      console.log(result)
       return result
     } else {
       return 'https://react.semantic-ui.com/images/wireframe/image.png'

@@ -8,7 +8,6 @@ const index = () => {
 
   const getData = async () => {
     const data = await getTransactionsByContract()
-    console.log(data)
   }
 
   return (

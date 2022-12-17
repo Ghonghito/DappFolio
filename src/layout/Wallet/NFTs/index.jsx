@@ -48,9 +48,6 @@ const Index = () => {
     setFtmNFTs(ftmData)
     setCroNFTs(croData)
     setArbNFTs(arbData)
-
-    console.log(ftmData)
-
     setIsLoading(false)
   }
 

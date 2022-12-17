@@ -1,5 +1,5 @@
 import { CiGrid41 } from 'react-icons/ci'
-import { BiReceipt, BiWallet } from 'react-icons/bi'
+import { BiReceipt, BiWallet, BiImages } from 'react-icons/bi'
 import { TbAddressBook } from 'react-icons/tb'
 
 export const menuItem = [
@@ -23,6 +23,13 @@ export const menuItem = [
     key: 'transactions',
     name: 'ტრანზაქციები',
     icon: <BiReceipt />
+  },
+  {
+    type: 'noncollapsible',
+    path: '/nft',
+    key: 'nft',
+    name: 'NFT',
+    icon: <BiImages />
   },
   {
     type: 'noncollapsible',

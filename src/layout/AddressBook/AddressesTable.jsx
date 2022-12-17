@@ -31,7 +31,6 @@ const AddressesTable = ({ updated }) => {
 
   const openEditModal = (index) => {
     const addressesList = JSON.parse(localStorage.getItem('addressBook'))
-    console.log([[addressesList[index], index]])
     setAddresToEdit([addressesList[index], index])
     setOpen(!open)
   }
@@ -43,12 +42,11 @@ const AddressesTable = ({ updated }) => {
     const getWalletName = document.getElementById('editedWalletName').value
     const getWalletAddress = document.getElementById('editedWalletAddress').value
 
-    console.log(addressesList)
     addressesList[index].chain = String(getEditedChain).toUpperCase()
     addressesList[index].walletName = getWalletName
     addressesList[index].walletAddress = getWalletAddress
     localStorage.setItem('addressBook', JSON.stringify(addressesList))
-    console.log(addressesList)
+
     getSavedAddresses()
     setOpen(!open)
   }

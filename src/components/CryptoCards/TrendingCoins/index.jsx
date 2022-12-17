@@ -7,7 +7,6 @@ const Index = () => {
 
   const getData = async () => {
     const data = await getCGTrendingCoins()
-    console.log(data.data.coins)
     setTrendingCoins(data.data.coins)
   }
 

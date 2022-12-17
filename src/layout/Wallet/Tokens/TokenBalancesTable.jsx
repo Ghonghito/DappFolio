@@ -7,7 +7,7 @@ import Receive from './ERC20TokenActions/Receive'
 import Card from 'components/Cards/Card'
 import { BiCopy } from 'react-icons/bi'
 import { getChainId, getExplorerURL, shortAddress } from 'utils/WalletHelpers'
-import { noTokenLogo } from 'utils/TokenHelpers'
+import { noTokenLogo } from 'utils/Helpers'
 import { useToast } from 'hooks/useToast'
 
 const TokenBalancesTable = ({ data, chain, loaded }) => {

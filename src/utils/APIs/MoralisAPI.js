@@ -59,3 +59,11 @@ export const getTokenMetadata = async (contractAddress) => {
     .catch((error) => console.log(error))
   return json
 }
+
+export const getWalletNFTsBalance = async (walletAddress, chain) => {
+  const json = await fetch(`https://deep-index.moralis.io/api/v2/${walletAddress}/nft?chain=${chain}&format=decimal&normalizeMetadata=true`, options)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error))
+  return json;
+};

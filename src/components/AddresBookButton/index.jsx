@@ -15,15 +15,9 @@ const Index = ({ inputId }) => {
     if (addressesList === null) {
       setSavedAddresses([])
     } else {
-      console.log(savedAddresses)
       setSavedAddresses(addressesList)
     }
   }
-
-  /* const useAddress = (walletAddress) => {
-    document.getElementById('walletName').value = walletAddress
-    setOpen(!open)
-  } */
 
   useEffect(() => {
     getSavedAddresses()

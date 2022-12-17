@@ -91,3 +91,11 @@ export const getTransactionsByContract = async () => {
     .catch((error) => console.log(error))
   return json;
 };
+
+export const getNFTOwner = async (contractAddress, id, chain) => {
+  const json = await fetch(`https://deep-index.moralis.io/api/v2/nft/${contractAddress}/${id}?chain=${chain}&format=decimal&normalizeMetadata=true`, options)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error))
+  return json;
+};

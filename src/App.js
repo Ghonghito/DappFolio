@@ -10,6 +10,7 @@ import NFTs from 'layout/Wallet/NFTs'
 import AddressBook from 'layout/AddressBook'
 import TokenSearch from 'layout/TokenTools/Search'
 import TokenInfo from 'layout/TokenTools/Info'
+import OwnerFinder from 'layout/NFTTools/OwnerFinder'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path='/addressbook' element={<AddressBook />} />
                 <Route path='/token/search' element={<TokenSearch />} />
                 <Route path='/token/info' element={<TokenInfo />} />
+                <Route path='/nfts/owner' element={<OwnerFinder />} />
               </Routes>
             </Sidenav>
           </BrowserRouter>

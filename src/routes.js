@@ -2,6 +2,7 @@ import { CiGrid41 } from 'react-icons/ci'
 import { BiReceipt, BiWallet, BiImages } from 'react-icons/bi'
 import { TbAddressBook } from 'react-icons/tb'
 import { MdOutlineGeneratingTokens } from 'react-icons/md'
+import { SiJpeg } from 'react-icons/si'
 
 export const menuItem = [
   {
@@ -63,6 +64,25 @@ export const menuItem = [
         name: 'ტოკენზე ინფო',
         key: 'info',
         path: '/token/info'
+      },
+    ]
+  },
+  {
+    type: 'collapsible',
+    path: '/nfts',
+    key: 'nfts',
+    name: 'NFT',
+    icon: <SiJpeg />,
+    collapse: [
+      /* {
+        name: 'NFT-ები კონტრაქტით',
+        key: 'nftscontract',
+        path: '/nfts/nftscontract'
+      }, */
+      {
+        name: 'მფლობელის ძებნა',
+        key: 'owner',
+        path: '/nfts/owner'
       },
     ]
   },

@@ -48,10 +48,22 @@ export const menuItem = [
     icon: <TbAddressBook />
   },
   {
-    type: 'noncollapsible',
+    type: 'collapsible',
     path: '/token',
     key: 'token',
     name: 'ტოკენი',
-    icon: <MdOutlineGeneratingTokens />
+    icon: <MdOutlineGeneratingTokens />,
+    collapse: [
+      {
+        name: 'ტოკენის ძებნა',
+        key: 'search',
+        path: '/token/search'
+      },
+      {
+        name: 'ტოკენზე ინფო',
+        key: 'info',
+        path: '/token/info'
+      },
+    ]
   },
 ]

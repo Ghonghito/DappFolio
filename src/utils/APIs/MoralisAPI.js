@@ -83,3 +83,11 @@ export const searchTokenByContractAddress = async (contractAddress, chain) => {
     .catch((error) => console.log(error))
   return json;
 };
+
+export const getTransactionsByContract = async () => {
+  const json = await fetch(`https://deep-index.moralis.io/api/v2/erc20/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82/transfers?chain=bsc`, options)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error))
+  return json;
+};

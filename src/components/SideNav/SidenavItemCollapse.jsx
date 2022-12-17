@@ -9,6 +9,7 @@ const SidenavItemCollapse = ({ icon, name, path, pathname, collapse }) => {
   const [collapsed, setIsCollapsed] = useState(false)
   const collapseName = pathname.split('/').slice(1)[0];
   const active = path === `/${collapseName}`
+
   const renderCollapse = collapse.map(({ name, key, path }) => {
     let returnValue;
     returnValue = (
@@ -24,14 +25,14 @@ const SidenavItemCollapse = ({ icon, name, path, pathname, collapse }) => {
 
   return (
     <div className='py-1'>
-      <div className={`${active ? 'bg-primary dark:bg-primary shadow-lg' : ''} group flex items-center space-x-2 cursor-pointer duration-150 hover:bg-primary dark:hover:bg-darkCard w-full h-[50px] px-2 rounded-md`} onClick={() => collapsed === name ? setIsCollapsed(!collapsed) : setIsCollapsed(!collapsed)} >
+      <div className={`${active ? 'bg-primary dark:bg-primary shadow-lg' : ''} group flex items-center justify-between space-x-2 cursor-pointer duration-150 hover:bg-primary dark:hover:bg-darkCard w-full h-[50px] px-2 rounded-md`} onClick={() => collapsed === name ? setIsCollapsed(!collapsed) : setIsCollapsed(!collapsed)} >
         <div className='flex items-center space-x-2'>
-          <div className={`${active ? 'text-white' : 'text-black dark:text-white'} duration-150 group-hover:text-white text-xl`}>
+          <div className={`${active ? 'text-white' : 'text-zinc-700 dark:text-darkText'} duration-150 group-hover:text-white text-xl`}>
             {icon}
           </div>
-          <h1 className={`${active ? 'text-white' : 'text-black dark:text-white'} group-hover:text-white duration-150 text-sm font-semibold`}>{name}</h1>
+          <h1 className={`${active ? 'text-white' : 'text-black dark:text-darkText'} group-hover:text-white duration-150 text-sm`}>{name}</h1>
         </div>
-        {collapsed ? (<IoIosArrowUp className='text-primary dark:text-white' />) : (<IoIosArrowDown className='text-primary dark:text-white' />)}
+        {collapsed ? (<IoIosArrowUp className={`duration-150 text-primary dark:text-white group-hover:text-white ${active ? 'text-white' : ''}`} />) : (<IoIosArrowDown className={`duration-150 text-primary dark:text-white group-hover:text-white ${active ? 'text-white' : ''}`} />)}
       </div>
       <Transition show={collapsed}
         enter='transition ease-out duration-200'

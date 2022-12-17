@@ -8,7 +8,8 @@ import Wallet from 'layout/Wallet/Tokens'
 import Transactions from 'layout/Wallet/Transactions'
 import NFTs from 'layout/Wallet/NFTs'
 import AddressBook from 'layout/AddressBook'
-import TokenSearch from 'layout/TokenSearch'
+import TokenSearch from 'layout/TokenTools/Search'
+import TokenInfo from 'layout/TokenTools/Info'
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
                 <Route path='/transactions' element={<Transactions />} />
                 <Route path='/nft' element={<NFTs />} />
                 <Route path='/addressbook' element={<AddressBook />} />
-                <Route path='/token' element={<TokenSearch />} />
+                <Route path='/token/search' element={<TokenSearch />} />
+                <Route path='/token/info' element={<TokenInfo />} />
               </Routes>
             </Sidenav>
           </BrowserRouter>

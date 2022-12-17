@@ -12,7 +12,7 @@ import { noTokenLogo } from 'utils/Helpers'
 import AddtoWallet from 'components/AddToWallet'
 
 const Index = () => {
-  document.title = 'ტოკენის ძენა'
+  document.title = 'DappFolio - ტოკენის ძენა'
   const [isLoading, setIsLoading] = useState(true)
   const [data, setData] = useState([])
   const toast = useToast()

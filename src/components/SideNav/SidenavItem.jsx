@@ -24,7 +24,7 @@ const SidenavItem = ({ menuItem }) => {
 			);
 		} else if (type === 'title') {
 			returnValue = (
-				<p key={key} className='text-lightText dark:text-darkText font-bold px-2 py-3'>{name}</p>
+				<p key={Math.random(0, 99)} className='text-zinc-700 text-sm mt-3'>{name}</p>
 			);
 		} else if (type === 'collapsible') {
 			returnValue = (

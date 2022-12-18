@@ -2,6 +2,7 @@ import { CiGrid41 } from 'react-icons/ci'
 import { BiReceipt, BiWallet, BiImages } from 'react-icons/bi'
 import { TbAddressBook } from 'react-icons/tb'
 import { MdOutlineGeneratingTokens } from 'react-icons/md'
+import { AiOutlineSearch } from 'react-icons/ai'
 
 export const menuItem = [
   {
@@ -82,6 +83,25 @@ export const menuItem = [
         name: 'მფლობელის ძებნა',
         key: 'owner',
         path: '/nfts/owner'
+      },
+    ]
+  },
+  {
+    type: 'collapsible',
+    path: '/res',
+    key: 'res',
+    name: 'Resolver',
+    icon: <AiOutlineSearch />,
+    collapse: [
+      {
+        name: 'ENS Name',
+        key: 'ens-name',
+        path: '/res/ens-name'
+      },
+      {
+        name: 'Unstoppable Domain',
+        key: 'ud-name',
+        path: '/res/ud-name'
       },
     ]
   },

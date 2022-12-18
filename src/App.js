@@ -11,6 +11,8 @@ import AddressBook from 'layout/AddressBook'
 import TokenSearch from 'layout/TokenTools/Search'
 import TokenInfo from 'layout/TokenTools/Info'
 import OwnerFinder from 'layout/NFTTools/OwnerFinder'
+import ENSName from 'layout/Resolver/ENS'
+import UDName from 'layout/Resolver/UnstoppableDomain'
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
                 <Route path='/token/search' element={<TokenSearch />} />
                 <Route path='/token/info' element={<TokenInfo />} />
                 <Route path='/nfts/owner' element={<OwnerFinder />} />
+                <Route path='/res/ens-name' element={<ENSName />} />
+                <Route path='/res/ud-name' element={<UDName />} />
               </Routes>
             </Sidenav>
           </BrowserRouter>

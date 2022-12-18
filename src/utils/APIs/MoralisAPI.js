@@ -99,3 +99,19 @@ export const getNFTOwner = async (contractAddress, id, chain) => {
     .catch((error) => console.log(error))
   return json;
 };
+
+export const resolveENSAddress = async (address) => {
+  const json = await fetch(`https://try.readme.io/https://deep-index.moralis.io/api/v2/resolve/${address}/reverse`, options)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error))
+  return json;
+};
+
+export const resolveUDName = async (name) => {
+  const json = await fetch(`https://deep-index.moralis.io/api/v2/resolve/${name}`, options)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error))
+  return json;
+};

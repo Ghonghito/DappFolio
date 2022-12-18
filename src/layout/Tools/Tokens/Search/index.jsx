@@ -49,7 +49,7 @@ const Index = () => {
           <div className='p-2'>
             <div>
               <Typography>ქსელი:</Typography>
-              <select id='addressChain' defaultValue='აირჩიეთ ქსელი' className='py-2 dark:bg-darkHover border dark-lightBorder dark:border-darkBorder rounded-lg p-2 w-full text-lightText dark:text-darkText focus:outline-none'>
+              <select id='addressChain' defaultValue='აირჩიეთ ქსელი' className='duration-150 py-2 dark:bg-darkHover border dark-lightBorder dark:border-darkBorder rounded-lg p-2 w-full text-lightText dark:text-darkText focus:outline-none'>
                 <option key='selectChain' value='selectChain'>აირჩიეთ ქსელი</option>
                 {supportedChains.map((x) => (
                   <option key={x.moralisId} value={x.moralisId}>{x.networkName}</option>

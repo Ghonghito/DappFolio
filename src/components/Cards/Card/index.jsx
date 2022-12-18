@@ -9,9 +9,9 @@ const Index = ({ title, variant, children, ...rest }) => {
       <div {...rest}>
         <div>
           {title && (
-            <div className='bg-lightHover dark:bg-darkHover w-full rounded-t-lg flex items-center justify-between'>
+            <div className='duration-150 bg-lightHover dark:bg-darkHover w-full rounded-t-lg flex items-center justify-between'>
               <div>
-                <p className={`text-lightText dark:text-darkText font-bold ${title === undefined ? '' : 'px-3 py-2'}`}>{title}</p>
+                <p className={`duration-150 text-lightText dark:text-darkText font-bold ${title === undefined ? '' : 'px-3 py-2'}`}>{title}</p>
               </div>
               <div className={`${variant === undefined ? '' : 'px-3 py-2'}`}>
                 {variant === 'collapsible' ? (
@@ -26,7 +26,7 @@ const Index = ({ title, variant, children, ...rest }) => {
         {variant === 'collapsible' ? (
           <div>
             {cardOpen ? (
-              <div className='border border-lightText dark:border-darkText opacity-10 mb-1'></div>
+              <div className='border duration-150 border-lightText dark:border-darkText opacity-10 mb-1'></div>
             ) : null}
           </div>
         ) : null}

@@ -109,7 +109,7 @@ const AddressesTable = ({ updated }) => {
               <div>
                 <div>
                   <Typography>ქსელი:</Typography>
-                  <select id="editedAddressChain" defaultValue={addressToEdit[0].chain} className="py-2 dark:bg-darkHover border border-lightBorder dark:border-darkBorder rounded-lg p-2 w-full text-lightText dark:text-darkText focus:outline-none">
+                  <select id="editedAddressChain" defaultValue={addressToEdit[0].chain} className="duration-150 py-2 dark:bg-darkHover border border-lightBorder dark:border-darkBorder rounded-lg p-2 w-full text-lightText dark:text-darkText focus:outline-none">
                     {supportedChains.map((x) => (
                       <option key={x.networkName} value={x.networkSymbol}>{x.networkName} </option>
                     ))}

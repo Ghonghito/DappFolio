@@ -32,7 +32,7 @@ const SidenavItemCollapse = ({ icon, name, path, pathname, collapse }) => {
           </div>
           <h1 className={`${active ? 'text-white' : 'text-lightText dark:text-darkText'} group-hover:text-white duration-150 text-sm`}>{name}</h1>
         </div>
-        {collapsed ? (<IoIosArrowUp className={`duration-150 text-primary dark:text-white group-hover:text-white ${active ? 'text-white' : ''}`} />) : (<IoIosArrowDown className={`duration-150 text-primary dark:text-white group-hover:text-white ${active ? 'text-white' : ''}`} />)}
+        {collapsed ? (<IoIosArrowUp className={`duration-150 dark:text-white group-hover:text-white ${active ? 'text-white' : 'text-primary'}`} />) : (<IoIosArrowDown className={`duration-150 text-primary dark:text-white group-hover:text-white ${active ? 'text-white' : ''}`} />)}
       </div>
       <Transition show={collapsed}
         enter='transition ease-out duration-200'

@@ -26,6 +26,7 @@ const Index = () => {
   const [ftmTokensBalance, setFtmTokensBalance] = useState([])
   const [croTokensBalance, setcroTokensBalance] = useState([])
   const [arbitrumTokensBalance, setArbitrumTokensBalance] = useState([])
+
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
@@ -145,37 +146,37 @@ const Index = () => {
                       </div>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TokenBalancesTable data={bscTokensBalance} chain={supportedChainsList.bsc.networkSymbol} loaded={isLoading} />
+                          <TokenBalancesTable data={bscTokensBalance} chain={supportedChainsList.BSC.networkSymbol} loaded={isLoading} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TokenBalancesTable data={ethTokensBalance} chain={supportedChainsList.eth.networkSymbol} loaded={isLoading} />
+                          <TokenBalancesTable data={ethTokensBalance} chain={supportedChainsList.ETH.networkSymbol} loaded={isLoading} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TokenBalancesTable data={avaxTokensBalance} chain={supportedChainsList.avax.networkSymbol} loaded={isLoading} />
+                          <TokenBalancesTable data={avaxTokensBalance} chain={supportedChainsList.AVAX.networkSymbol} loaded={isLoading} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TokenBalancesTable data={maticTokensBalance} chain={supportedChainsList.matic.networkSymbol} loaded={isLoading} />
+                          <TokenBalancesTable data={maticTokensBalance} chain={supportedChainsList.MATIC.networkSymbol} loaded={isLoading} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TokenBalancesTable data={ftmTokensBalance} chain={supportedChainsList.ftm.networkSymbol} loaded={isLoading} />
+                          <TokenBalancesTable data={ftmTokensBalance} chain={supportedChainsList.FTM.networkSymbol} loaded={isLoading} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TokenBalancesTable data={croTokensBalance} chain={supportedChainsList.cro.networkSymbol} loaded={isLoading} />
+                          <TokenBalancesTable data={croTokensBalance} chain={supportedChainsList.CRO.networkSymbol} loaded={isLoading} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TokenBalancesTable data={arbitrumTokensBalance} chain={supportedChainsList.arb.networkSymbol} loaded={isLoading} />
+                          <TokenBalancesTable data={arbitrumTokensBalance} chain={supportedChainsList.ARB.networkSymbol} loaded={isLoading} />
                         </Tab.Panel>
                       </Tab.Panels>
                     </div>

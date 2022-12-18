@@ -1,18 +1,18 @@
 export const noTokenLogo = (chain) => {
   switch (chain) {
-    case 'bsc':
+    case 'BSC':
       return 'https://bscscan.com/images/main/empty-token.png'
-    case 'eth':
+    case 'ETH':
       return 'https://etherscan.io/images/main/empty-token.png'
-    case 'avax':
+    case 'AVAX':
       return 'https://snowtrace.io/images/main/empty-token.png'
-    case 'ftm':
+    case 'FTM':
       return 'https://ftmscan.com/images/main/empty-token.png'
-    case 'matic':
+    case 'MATIC':
       return 'https://polygonscan.com/images/main/empty-token.png'
-    case 'cro':
+    case 'CRO':
       return 'https://cronoscan.com/images/main/empty-token.png'
-    case 'arb':
+    case 'ARB':
       return 'https://arbiscan.io/images/main/empty-token.png?v=1'
     default:
       return ''

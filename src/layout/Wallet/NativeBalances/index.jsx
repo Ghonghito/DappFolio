@@ -13,6 +13,7 @@ const NativeBalances = () => {
     setIsLoading(true)
     setNativeCrossChainBalance([])
     const balances = await getWalletNativeCrossChainBalance(account)
+    console.log(balances)
     setNativeCrossChainBalance(balances)
     setIsLoading(false)
   }

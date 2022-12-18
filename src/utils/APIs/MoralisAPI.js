@@ -28,7 +28,7 @@ export const getWalletTokensBalance = async (walletAddress, chain) => {
 export const getWalletNativeCrossChainBalance = async (walletAddress) => {
   const nativeBalanceList = []
   supportedChains.forEach(async (x) => {
-    await fetch(`https://deep-index.moralis.io/api/v2/${walletAddress}/balance?chain=${x.chainId}`, options)
+    await fetch(`https://deep-index.moralis.io/api/v2/${walletAddress}/balance?chain=${x.chainIdHex}`, options)
       .then((response) => response.json())
       .then((data) => nativeBalanceList.push({ networkData: x, balance: data.balance / 1e18 }))
       .catch((error) => console.log(error))

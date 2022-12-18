@@ -132,37 +132,37 @@ const Index = () => {
                     </div>
                     <Tab.Panels className="mt-2">
                       <Tab.Panel>
-                        <NFTCards data={bscNFTs} chain={supportedChainsList.bsc.networkSymbol} loaded={isLoading} />
+                        <NFTCards data={bscNFTs} chain={supportedChainsList.BSC.networkSymbol} loaded={isLoading} />
                       </Tab.Panel>
                     </Tab.Panels>
                     <Tab.Panels className="mt-2">
                       <Tab.Panel>
-                        <NFTCards data={ethNFTs} chain={supportedChainsList.eth.networkSymbol} loaded={isLoading} />
+                        <NFTCards data={ethNFTs} chain={supportedChainsList.ETH.networkSymbol} loaded={isLoading} />
                       </Tab.Panel>
                     </Tab.Panels>
                     <Tab.Panels className="mt-2">
                       <Tab.Panel>
-                        <NFTCards data={avaxNFTs} chain={supportedChainsList.avax.networkSymbol} loaded={isLoading} />
+                        <NFTCards data={avaxNFTs} chain={supportedChainsList.AVAX.networkSymbol} loaded={isLoading} />
                       </Tab.Panel>
                     </Tab.Panels>
                     <Tab.Panels className="mt-2">
                       <Tab.Panel>
-                        <NFTCards data={maticNFTs} chain={supportedChainsList.matic.networkSymbol} loaded={isLoading} />
+                        <NFTCards data={maticNFTs} chain={supportedChainsList.MATIC.networkSymbol} loaded={isLoading} />
                       </Tab.Panel>
                     </Tab.Panels>
                     <Tab.Panels className="mt-2">
                       <Tab.Panel>
-                        <NFTCards data={ftmNFTs} chain={supportedChainsList.ftm.networkSymbol} loaded={isLoading} />
+                        <NFTCards data={ftmNFTs} chain={supportedChainsList.FTM.networkSymbol} loaded={isLoading} />
                       </Tab.Panel>
                     </Tab.Panels>
                     <Tab.Panels className="mt-2">
                       <Tab.Panel>
-                        <NFTCards data={croNFTs} chain={supportedChainsList.cro.networkSymbol} loaded={isLoading} />
+                        <NFTCards data={croNFTs} chain={supportedChainsList.CRO.networkSymbol} loaded={isLoading} />
                       </Tab.Panel>
                     </Tab.Panels>
                     <Tab.Panels className="mt-2">
                       <Tab.Panel>
-                        <NFTCards data={arbNFTs} chain={supportedChainsList.arb.networkSymbol} loaded={isLoading} />
+                        <NFTCards data={arbNFTs} chain={supportedChainsList.ARB.networkSymbol} loaded={isLoading} />
                       </Tab.Panel>
                     </Tab.Panels>
                   </div>

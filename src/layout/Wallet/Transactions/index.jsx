@@ -61,7 +61,6 @@ const Index = () => {
     setArbNativeTransactions([])
     setArbTokenTransactions([])
 
-
     const bscNative = await getWalletNativeTransactions(account, 'bsc')
     const bscToken = await getWalletTokenTransactions(account, 'bsc')
     setBscNativeTransactions(bscNative)
@@ -180,37 +179,37 @@ const Index = () => {
                       </div>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TransactionsTable nativeTransactions={bscNativeTransactions} tokenTransactions={bscTokenTransactions} chain={supportedChainsList.bsc.networkSymbol} />
+                          <TransactionsTable nativeTransactions={bscNativeTransactions} tokenTransactions={bscTokenTransactions} chain={supportedChainsList.BSC.networkSymbol} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TransactionsTable nativeTransactions={ethNativeTransactions} tokenTransactions={ethTokenTransactions} chain={supportedChainsList.eth.networkSymbol} />
+                          <TransactionsTable nativeTransactions={ethNativeTransactions} tokenTransactions={ethTokenTransactions} chain={supportedChainsList.ETH.networkSymbol} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TransactionsTable nativeTransactions={avaxNativeTransactions} tokenTransactions={avaxTokenTransactions} chain={supportedChainsList.avax.networkSymbol} />
+                          <TransactionsTable nativeTransactions={avaxNativeTransactions} tokenTransactions={avaxTokenTransactions} chain={supportedChainsList.AVAX.networkSymbol} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TransactionsTable nativeTransactions={maticNativeTransactions} tokenTransactions={maticTokenTransactions} chain={supportedChainsList.matic.networkSymbol} />
+                          <TransactionsTable nativeTransactions={maticNativeTransactions} tokenTransactions={maticTokenTransactions} chain={supportedChainsList.MATIC.networkSymbol} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TransactionsTable nativeTransactions={ftmNativeTransactions} tokenTransactions={ftmTokenTransactions} chain={supportedChainsList.ftm.networkSymbol} />
+                          <TransactionsTable nativeTransactions={ftmNativeTransactions} tokenTransactions={ftmTokenTransactions} chain={supportedChainsList.FTM.networkSymbol} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TransactionsTable nativeTransactions={croNativeTransactions} tokenTransactions={croTokenTransactions} chain={supportedChainsList.cro.networkSymbol} />
+                          <TransactionsTable nativeTransactions={croNativeTransactions} tokenTransactions={croTokenTransactions} chain={supportedChainsList.CRO.networkSymbol} />
                         </Tab.Panel>
                       </Tab.Panels>
                       <Tab.Panels className="mt-2">
                         <Tab.Panel>
-                          <TransactionsTable nativeTransactions={arbNativeTransactions} tokenTransactions={arbTokenTransactions} chain={supportedChainsList.arb.networkSymbol} />
+                          <TransactionsTable nativeTransactions={arbNativeTransactions} tokenTransactions={arbTokenTransactions} chain={supportedChainsList.ARB.networkSymbol} />
                         </Tab.Panel>
                       </Tab.Panels>
                     </div>

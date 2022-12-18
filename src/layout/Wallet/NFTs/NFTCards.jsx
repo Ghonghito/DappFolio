@@ -13,7 +13,7 @@ const Index = ({ data, loaded, chain }) => {
     <div>
       {!loaded ? (
         <div>
-          {Object.keys(data.result).length > 0 ? (
+          {Object.keys(data).length > 0 ? (
             <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2'>
               {data.result.map((x, index) => (
                 <Card key={index}>

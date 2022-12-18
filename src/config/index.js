@@ -118,7 +118,7 @@ export const supportedChains = [
 ]
 
 export const supportedChainsList = {
-  eth: {
+  ETH: {
     networkName: 'Ethereum',
     networkSymbol: 'ETH',
     coinName: 'ETH',
@@ -131,7 +131,7 @@ export const supportedChainsList = {
     logo: ETH,
     logoSize: 'w-3'
   },
-  bsc: {
+  BSC: {
     networkName: 'Smart Chain',
     networkSymbol: 'BSC',
     coinName: 'BNB',
@@ -144,7 +144,7 @@ export const supportedChainsList = {
     logo: BSC,
     logoSize: 'w-4'
   },
-  matic: {
+  MATIC: {
     networkName: 'Polygon',
     networkSymbol: 'MATIC',
     coinName: 'MATIC',
@@ -157,7 +157,7 @@ export const supportedChainsList = {
     logo: Polygon,
     logoSize: 'w-4'
   },
-  avax: {
+  AVAX: {
     networkName: 'Avalanche',
     networkSymbol: 'AVAX',
     coinName: 'AVAX',
@@ -170,7 +170,7 @@ export const supportedChainsList = {
     logo: AVAX,
     logoSize: 'w-4'
   },
-  ftm: {
+  FTM: {
     networkName: 'Fantom',
     networkSymbol: 'FTM',
     coinName: 'FTM',
@@ -183,7 +183,7 @@ export const supportedChainsList = {
     logo: Fantom,
     logoSize: 'w-3'
   },
-  cro: {
+  CRO: {
     networkName: 'Cronos',
     networkSymbol: 'CRO',
     coinName: 'CRO',
@@ -196,7 +196,7 @@ export const supportedChainsList = {
     logo: Cronos,
     logoSize: 'w-4'
   },
-  arb: {
+  ARB: {
     networkName: 'Arbitrum',
     networkSymbol: 'ARB',
     coinName: 'ETH',

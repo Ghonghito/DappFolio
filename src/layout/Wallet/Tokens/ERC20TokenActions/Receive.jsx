@@ -13,7 +13,7 @@ const Send = ({ chain }) => {
   const [open, setOpen] = useState(false)
   const { account, chainId } = useWeb3React()
   const toast = useToast()
-
+  console.log(chain)
   const copyAddress = () => {
     navigator.clipboard.writeText(account);
     toast('success', 'დაკოპირდა')

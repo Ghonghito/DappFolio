@@ -60,11 +60,6 @@ export const menuItem = [
         key: 'search',
         path: '/token/search'
       },
-      {
-        name: 'ტოკენზე ინფო',
-        key: 'info',
-        path: '/token/info'
-      },
     ]
   },
   {

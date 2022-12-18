@@ -9,7 +9,6 @@ import Transactions from 'layout/Wallet/Transactions'
 import NFTs from 'layout/Wallet/NFTs'
 import AddressBook from 'layout/AddressBook'
 import TokenSearch from 'layout/Tools/Tokens/Search'
-import TokenInfo from 'layout/Tools/Tokens/Info'
 import OwnerFinder from 'layout/Tools/NFT/OwnerFinder'
 import ENSName from 'layout/Tools/Resolver/ENS'
 import UDName from 'layout/Tools/Resolver/UnstoppableDomain'
@@ -30,7 +29,6 @@ function App() {
                 <Route path='/nft' element={<NFTs />} />
                 <Route path='/addressbook' element={<AddressBook />} />
                 <Route path='/token/search' element={<TokenSearch />} />
-                <Route path='/token/info' element={<TokenInfo />} />
                 <Route path='/nfts/owner' element={<OwnerFinder />} />
                 <Route path='/res/ens-name' element={<ENSName />} />
                 <Route path='/res/ud-name' element={<UDName />} />

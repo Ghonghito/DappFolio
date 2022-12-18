@@ -44,47 +44,47 @@ const Index = ({ nativeTransactions, tokenTransactions, chain }) => {
                       <table className='border-collapse table-auto w-full text-sm text-left duration-150 bg-white dark:bg-darkCard rounded-lg'>
                         <thead className='text-gray-500 text-xs'>
                           <tr>
-                            <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                            <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                               ჰეში
                             </th>
-                            <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                            <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                               ბლოკის N
                             </th>
-                            <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                            <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                               თარიღი
                             </th>
-                            <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                            <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                               საიდან
                             </th>
-                            <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                            <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                               სად
                             </th>
                           </tr>
                         </thead>
                         <tbody>
                           {tokenTransactions.result.map((x, Index) => (
-                            <tr key={Index} className='w-full cursor-pointer duration-150 hover:bg-blue-50 dark:hover:bg-zinc-900'>
-                              <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                            <tr key={Index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
+                              <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                                 <a href={getExplorerURL('tx', x.transaction_hash, getChainId(chain))} target='_blank' rel='noreferrer'>
                                   <Typography className='hover:underline' color='text-primary'>{shortAddress(x.transaction_hash, 5)}</Typography>
                                 </a>
                               </th>
-                              <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                              <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                                 <a href={getExplorerURL('block', x.block_number, getChainId(chain))} target='_blank' rel='noreferrer'>
                                   <Typography className='hover:underline' color='text-primary'>{x.block_number}</Typography>
                                 </a>
                               </th>
-                              <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                              <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                                 <Typography>{formatTimestamp(x.block_timestamp)}</Typography>
                               </th>
-                              <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                              <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                                 <a href={getExplorerURL('wallet', x.from_address, getChainId(chain))} target='_blank' rel='noreferrer'>
                                   <Typography className='hover:underline' color={`${itsMe(x.from_address) === 'შენ' ? '' : 'text-primary'}`}>
                                     {shortAddress(x.from_address, 5)}
                                   </Typography>
                                 </a>
                               </th>
-                              <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                              <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                                 <a href={getExplorerURL('wallet', x.to_address, getChainId(chain))} target='_blank' rel='noreferrer'>
                                   <Typography className='hover:underline' color={`${itsMe(x.to_address) === 'შენ' ? '' : 'text-primary'}`}>
                                     {shortAddress(x.to_address, 5)}
@@ -111,57 +111,57 @@ const Index = ({ nativeTransactions, tokenTransactions, chain }) => {
                     <table className='border-collapse table-auto w-full text-sm text-left duration-150 bg-white dark:bg-darkCard rounded-lg'>
                       <thead className='text-gray-500 text-xs'>
                         <tr>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                             ჰეში
                           </th>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                             ბლოკის N
                           </th>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                             თარიღი
                           </th>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                             საიდან
                           </th>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                             სად
                           </th>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                             საკომისიო
                           </th>
                         </tr>
                       </thead>
                       <tbody>
                         {nativeTransactions.result.map((x, Index) => (
-                          <tr key={Index} className='w-full cursor-pointer duration-150 hover:bg-blue-50 dark:hover:bg-zinc-900'>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                          <tr key={Index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <a href={getExplorerURL('tx', x.hash, getChainId(chain))} target='_blank' rel='noreferrer'>
                                 <Typography className='hover:underline' color='text-primary'>{shortAddress(x.hash, 5)}</Typography>
                               </a>
                             </th>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <a href={getExplorerURL('block', x.block_number, getChainId(chain))} target='_blank' rel='noreferrer'>
                                 <Typography className='hover:underline' color='text-primary'>{x.block_number}</Typography>
                               </a>
                             </th>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <Typography>{formatTimestamp(x.block_timestamp)}</Typography>
                             </th>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <a href={getExplorerURL('wallet', x.from_address, getChainId(chain))} target='_blank' rel='noreferrer'>
                                 <Typography className='hover:underline' color={`${itsMe(x.from_address) === 'შენ' ? '' : 'text-primary'}`}>
                                   {shortAddress(x.from_address, 5)}
                                 </Typography>
                               </a>
                             </th>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <a href={getExplorerURL('wallet', x.to_address, getChainId(chain))} target='_blank' rel='noreferrer'>
                                 <Typography className='hover:underline' color={`${itsMe(x.to_address) === 'შენ' ? '' : 'text-primary'}`}>
                                   {shortAddress(x.to_address, 5)}
                                 </Typography>
                               </a>
                             </th>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <Typography className='text-sm'>
                                 {Number(Number(x.gas_price) * Number(x.receipt_gas_used)) / 1e18} {supportedChainsList[chain].coinName}
                               </Typography>

@@ -115,7 +115,7 @@ const Index = () => {
                 <Tab.Group>
                   <div className=''>
                     <div className=''>
-                      <Tab.List className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 overflow-y-auto space-x-1 rounded-xl duration-150 bg-blue-100 dark:bg-darkCard p-1'>
+                      <Tab.List className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 overflow-y-auto space-x-1 rounded-xl duration-150 bg-lightHover dark:bg-darkCard p-1'>
                         {chains.map((x, index) => (
                           <Tab key={index} className={({ selected }) => classNames('flex items-center gap-2 md:justify-center w-full rounded-lg py-1 px-2 md:px-4 text-sm font-medium leading-5 focus:outline-none',
                             selected ? 'duration-150 bg-white dark:bg-primaryDark text-primary dark:text-white font-bold shadow' : 'text-zinc-500 font-bold hover:bg-white hover:text-primary')}>

@@ -28,24 +28,24 @@ const TokenBalancesTable = ({ data, chain, loaded }) => {
                 <table className='border-collapse table-auto w-full text-sm text-left duration-150 bg-white dark:bg-darkCard rounded-lg'>
                   <thead className='text-gray-500 text-xs'>
                     <tr>
-                      <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                      <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                         სახელი
                       </th>
-                      <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                      <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                         ბალანსი
                       </th>
-                      <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                      <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
 
                       </th>
-                      <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                      <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
 
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     {data.map((x, index) => (
-                      <tr key={x.token_address} className='w-full cursor-pointer duration-150 hover:bg-blue-50 dark:hover:bg-zinc-900'>
-                        <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                      <tr key={x.token_address} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
+                        <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                           <div className='flex items-center gap-2'>
                             <img src={x.logo === null ? noTokenLogo(chain) : x.logo} alt='bsc' className='w-9 rounded-full' />
                             <div className='flex flex-col'>
@@ -64,15 +64,15 @@ const TokenBalancesTable = ({ data, chain, loaded }) => {
                             </div>
                           </div>
                         </th>
-                        <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                        <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                           <Typography>
                             {Number(Number(x.balance) / 10 ** x.decimals).toLocaleString('en-US')}
                           </Typography>
                         </th>
-                        <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                        <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                           <AddtoWallet variant='text' address={x.token_address} symbol={x.symbol} decimal={x.decimals} />
                         </th>
-                        <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4 flex items-center gap-2'>
+                        <th className='duration-150 border-b dark:border-darkBorder px-6 py-4 flex items-center gap-2'>
                           <Send data={x} chain={chain} />
                           <Receive data={x} chain={chain} />
                         </th>

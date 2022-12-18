@@ -9,7 +9,7 @@ export default function Toast({ type, title, message, txHash, id }) {
   const dispatch = useToastDispatchContext();
   return (
     <>
-      <div className='max-w-md w-full bg-white dark:bg-zinc-800 shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5 mt-2 border border-[#e3e3e6] dark:border-[#303031]'>
+      <div className='max-w-md w-full bg-white dark:bg-darkBorder shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5 mt-2 border dark-lightBorder dark:border-darkBorder'>
         <div className='flex-1 w-0 p-4'>
           <div className='flex items-start'>
             {type === 'success' ? (<AiFillCheckCircle className='text-green-500 text-[20px]' />) : null}

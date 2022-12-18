@@ -11,9 +11,9 @@ const Index = ({data, chain, loaded}) => {
   return (
     <div>
       {!loaded ? (
-        <div className='w-full md:w-[550px] mb-3'>
+        <div>
           {Object.keys(data).length > 1 ? (
-            <div>
+            <div className='w-full md:w-[550px] mb-3'>
               <Card>
                 <div className='p-3 flex flex-col md:flex-row gap-2'>
                   <div className='flex flex-col gap-2 items-center'>

@@ -25,7 +25,7 @@ const Send = ({ data, chain, ...rest }) => {
       <Modal open={open} close={() => setOpen(!open)} hideHeader={true}>
         <div className='p-3'>
           <div className='flex flex-col items-center justify-center'>
-            <div className='bg-zinc-200 dark:bg-zinc-800 p-2 rounded-md flex items-center justify-center'>
+            <div className='bg-lightBorder dark:bg-darkBorder p-2 rounded-md flex items-center justify-center'>
               <img src='https://bscscan.com/images/main/empty-token.png' alt='test' className='w-12' />
             </div>
             <div className='text-center mt-1'>

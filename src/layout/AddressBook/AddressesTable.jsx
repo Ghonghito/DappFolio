@@ -63,33 +63,33 @@ const AddressesTable = ({ updated }) => {
             <table className='border-collapse table-auto w-full text-sm text-left duration-150 bg-white dark:bg-darkCard rounded-lg'>
               <thead className='text-gray-500 text-xs'>
                 <tr>
-                  <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                  <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                     ქსელი
                   </th>
-                  <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                  <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                     სახელი
                   </th>
-                  <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                  <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                     მისამართი
                   </th>
-                  <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                  <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
 
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {addresses.map((x, index) => (
-                  <tr key={index} className='w-full cursor-pointer duration-150 hover:bg-blue-50 dark:hover:bg-zinc-900'>
-                    <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
-                      <Typography>{x.chain}</Typography>
+                  <tr key={index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
+                    <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
+                      <Typography className='font-light'>{x.chain}</Typography>
                     </th>
-                    <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
-                      <Typography>{x.walletName}</Typography>
+                    <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
+                      <Typography className='font-light'>{x.walletName}</Typography>
                     </th>
-                    <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
-                      <Typography>{shortAddress(x.walletAddress, 5)}</Typography>
+                    <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
+                      <Typography className='font-light'>{shortAddress(x.walletAddress, 5)}</Typography>
                     </th>
-                    <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                    <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                       <div className='flex flex-row items-center gap-2'>
                         <AiFillEdit onClick={() => openEditModal(index)} className='text-yellow-400 duration-150 hover:scale-110 text-xl' />
                         <AiFillDelete onClick={() => deleteAddress(index)} className='text-red-500 duration-150 hover:scale-110 text-xl' />
@@ -109,7 +109,7 @@ const AddressesTable = ({ updated }) => {
               <div>
                 <div>
                   <Typography>ქსელი:</Typography>
-                  <select id="editedAddressChain" defaultValue={addressToEdit[0].chain} className="py-2 dark:bg-[#181818] border border-[#e3e3e6] dark:border-[#303031] rounded-lg p-2 w-full text-lightText dark:text-[#868687] focus:outline-none">
+                  <select id="editedAddressChain" defaultValue={addressToEdit[0].chain} className="py-2 dark:bg-darkHover border border-lightBorder dark:border-darkBorder rounded-lg p-2 w-full text-lightText dark:text-darkText focus:outline-none">
                     {supportedChains.map((x) => (
                       <option key={x.networkName} value={x.networkSymbol}>{x.networkName} </option>
                     ))}

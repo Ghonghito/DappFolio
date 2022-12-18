@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = ({ children, color, className = '', ...rest }) => {
   return (
-    <p {...rest} className={`duration-200 ${color ? color : 'text-zinc-800 dark:text-gray-400'} font-light ${className}`}>
+    <p {...rest} className={`duration-150 ${color ? color : 'text-lightText dark:text-darkText'} ${className}`}>
       {children}
     </p>
   )

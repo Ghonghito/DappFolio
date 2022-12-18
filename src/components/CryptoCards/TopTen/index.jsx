@@ -49,7 +49,7 @@ const Index = () => {
                 </thead>
                 <tbody>
                   {topCoins.map((coin) => (
-                    <tr key={coin.name} className='w-full cursor-pointer duration-150 hover:bg-blue-50 dark:hover:bg-zinc-900'>
+                    <tr key={coin.name} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
                       <th className='px-4 py-4'>
                         <Typography>{coin.market_cap_rank}</Typography>
                       </th>

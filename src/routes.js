@@ -2,7 +2,6 @@ import { CiGrid41 } from 'react-icons/ci'
 import { BiReceipt, BiWallet, BiImages } from 'react-icons/bi'
 import { TbAddressBook } from 'react-icons/tb'
 import { MdOutlineGeneratingTokens } from 'react-icons/md'
-import { SiJpeg } from 'react-icons/si'
 
 export const menuItem = [
   {
@@ -72,7 +71,7 @@ export const menuItem = [
     path: '/nfts',
     key: 'nfts',
     name: 'NFT',
-    icon: <SiJpeg />,
+    icon: <BiImages />,
     collapse: [
       /* {
         name: 'NFT-ები კონტრაქტით',

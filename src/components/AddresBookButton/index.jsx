@@ -43,27 +43,27 @@ const Index = ({ inputId }) => {
                 <table className='border-collapse table-auto w-full text-sm text-left '>
                   <thead className='text-gray-500 text-xs'>
                     <tr>
-                      <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                      <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                         ქსელი
                       </th>
-                      <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                      <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                         სახელი
                       </th>
-                      <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                      <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                         მისამართი
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     {savedAddresses.map((x, index) => (
-                      <tr onClick={() => document.getElementById(inputId).value = x.walletAddress} on key={index} className='w-full cursor-pointer duration-150 hover:bg-blue-50 dark:hover:bg-zinc-900 hover:scale-95'>
-                        <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                      <tr onClick={() => document.getElementById(inputId).value = x.walletAddress} on key={index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover hover:scale-95'>
+                        <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                           <Typography>{x.chain}</Typography>
                         </th>
-                        <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                        <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                           <Typography>{x.walletName}</Typography>
                         </th>
-                        <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                        <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                           <Typography>{shortAddress(x.walletAddress, 5)}</Typography>
                         </th>
                       </tr>

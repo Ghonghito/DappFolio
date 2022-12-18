@@ -49,7 +49,7 @@ const Index = () => {
           <div className='p-2'>
             <div>
               <Typography>ქსელი:</Typography>
-              <select id='addressChain' defaultValue='აირჩიეთ ქსელი' className='py-2 dark:bg-[#181818] border border-[#e3e3e6] dark:border-[#303031] rounded-lg p-2 w-full text-lightText dark:text-[#868687] focus:outline-none'>
+              <select id='addressChain' defaultValue='აირჩიეთ ქსელი' className='py-2 dark:bg-darkHover border dark-lightBorder dark:border-darkBorder rounded-lg p-2 w-full text-lightText dark:text-darkText focus:outline-none'>
                 <option key='selectChain' value='selectChain'>აირჩიეთ ქსელი</option>
                 {supportedChains.map((x) => (
                   <option key={x.moralisId} value={x.moralisId}>{x.networkName}</option>
@@ -74,44 +74,44 @@ const Index = () => {
                     <table className='border-collapse table-auto w-full text-sm text-left duration-150 bg-white dark:bg-darkCard rounded-lg'>
                       <thead className='text-gray-500 text-xs'>
                         <tr>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                             სახელი
                           </th>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                             სიმბოლო
                           </th>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                             კონტრაქტი
                           </th>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
                             Decimal
                           </th>
-                          <th scope='col' className='duration-150 border-b dark:border-zinc-800 px-6 py-3'>
+                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
 
                           </th>
                         </tr>
                       </thead>
                       <tbody>
                         {data.map((x, index) => (
-                          <tr key={index} className='w-full cursor-pointer duration-150 hover:bg-blue-50 dark:hover:bg-zinc-900'>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                          <tr key={index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <div className='flex items-center gap-2'>
                                 <img src={x.logo === null ? noTokenLogo('bsc') : x.logo} alt='bsc' className='w-7 rounded-full' />
                                 <Typography>{x.name}</Typography>
                               </div>
                             </th>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <Typography>{x.symbol}</Typography>
                             </th>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <a href={getExplorerURL('token', x.address, getChainId('bsc'))} target='_blank' rel='noreferrer'>
                                 <Typography className='hover:underline'>{shortAddress(x.address, 5)}</Typography>
                               </a>
                             </th>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <Typography>{x.decimals}</Typography>
                             </th>
-                            <th className='duration-150 border-b dark:border-zinc-800 px-6 py-4'>
+                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <AddtoWallet variant='text' address={x.address} symbol={x.symbol} decimal={x.decimals} />
                             </th>
                           </tr>

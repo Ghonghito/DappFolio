@@ -8,11 +8,11 @@ import Wallet from 'layout/Wallet/Tokens'
 import Transactions from 'layout/Wallet/Transactions'
 import NFTs from 'layout/Wallet/NFTs'
 import AddressBook from 'layout/AddressBook'
-import TokenSearch from 'layout/TokenTools/Search'
-import TokenInfo from 'layout/TokenTools/Info'
-import OwnerFinder from 'layout/NFTTools/OwnerFinder'
-import ENSName from 'layout/Resolver/ENS'
-import UDName from 'layout/Resolver/UnstoppableDomain'
+import TokenSearch from 'layout/Tools/Tokens/Search'
+import TokenInfo from 'layout/Tools/Tokens/Info'
+import OwnerFinder from 'layout/Tools/NFT/OwnerFinder'
+import ENSName from 'layout/Tools/Resolver/ENS'
+import UDName from 'layout/Tools/Resolver/UnstoppableDomain'
 
 function App() {
   return (

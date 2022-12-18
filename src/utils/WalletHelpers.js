@@ -95,43 +95,58 @@ export const getChainFullName = (chainId) => {
   switch (chainId) {
     case 1:
       return <div className='flex flex-row items-center gap-1'>
-        <Avatar src={ETH} alt='eth' className='w-3' />
+        <div className='bg-blue-500 p-1 rounded-lg'>
+          <Avatar src={ETH} alt='eth' className='w-3' />
+        </div>
         <p className='font-semibold text-sm hidden md:flex'>ETH</p>
         <p className='font-semibold text-sm flex md:hidden'>ETH</p>
       </div>
     case 56:
       return <div className='flex flex-row items-center gap-1'>
-        <Avatar src={BSC} alt='bsc' className='w-4' />
-        <p className='font-semibold text-sm hidden md:flex'>Smart Chain</p>
-        <p className='font-semibold text-sm flex md:hidden'>BSC</p>
+        <div className='bg-yellow-500 p-1 rounded-lg'>
+          <Avatar src={BSC} alt='bsc' className='w-4' />
+        </div>
+        {/* <Avatar src={BSC} alt='bsc' className='w-4' /> */}
+        <p className='font-semibold text-sm hidden md:flex text-zinc-600 dark:text-zinc-300'>Smart Chain</p>
+        <p className='font-semibold text-sm flex md:hidden text-zinc-600 dark:text-zinc-300'>BSC</p>
       </div>
     case 43114:
       return <div className='flex flex-row items-center gap-1'>
-        <Avatar src={AVAX} alt='avax' className='w-4' />
+        <div className='bg-red-500 p-1 rounded-lg'>
+          <Avatar src={AVAX} alt='avax' className='w-4' />
+        </div>
         <p className='font-semibold text-sm hidden md:flex'>Avalanche</p>
         <p className='font-semibold text-sm flex md:hidden'>AVAX</p>
       </div>
     case 250:
       return <div className='flex flex-row items-center gap-1'>
-        <Avatar src={FANTOM} alt='fantom' className='w-3' />
+        <div className='bg-blue-400 p-1 rounded-lg'>
+          <Avatar src={FANTOM} alt='fantom' className='w-3' />
+        </div>
         <p className='font-semibold text-sm hidden md:flex'>Fantom</p>
         <p className='font-semibold text-sm flex md:hidden'>FTM</p>
       </div>
     case 137:
       return <div className='flex flex-row items-center gap-1'>
-        <Avatar src={MATIC} alt='matic' className='w-3' />
+        <div className='bg-purple-500 p-1 rounded-lg'>
+          <Avatar src={MATIC} alt='matic' className='w-3' />
+        </div>
         <p className='font-semibold text-sm hidden md:flex'>Polygon</p>
         <p className='font-semibold text-sm flex md:hidden'>MATIC</p>
       </div>
     case 25:
       return <div className='flex flex-row items-center gap-1'>
-        <Avatar src={Cronos} alt='matic' className='w-3' />
+        <div className='bg-blue-800 p-1 rounded-lg'>
+          <Avatar src={Cronos} alt='matic' className='w-3' />
+        </div>
         <p className='font-semibold text-sm hidden md:flex'>Cronos</p>
         <p className='font-semibold text-sm flex md:hidden'>CRO</p>
       </div>
     case 42161:
       return <div className='flex flex-row items-center gap-1'>
-        <Avatar src={Arbitrum} alt='matic' className='w-3' />
+        <div className='bg-blue-600 p-1 rounded-lg'>
+          <Avatar src={Arbitrum} alt='matic' className='w-3' />
+        </div>
         <p className='font-semibold text-sm hidden md:flex'>Arbitrum</p>
         <p className='font-semibold text-sm flex md:hidden'>ARB</p>
       </div>

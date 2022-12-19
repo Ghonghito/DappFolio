@@ -8,7 +8,7 @@ import { useToast } from 'hooks/useToast'
 import { supportedChains } from 'config'
 import { searchTokenBySymbol, searchTokenByContractAddress } from 'utils/APIs/MoralisAPI'
 import { getChainId, getExplorerURL, shortAddress } from 'utils/WalletHelpers'
-import { noTokenLogo } from 'utils/Helpers'
+import { moralisIdToSymbol, noTokenLogo } from 'utils/Helpers'
 import AddtoWallet from 'components/AddToWallet'
 
 const Index = () => {
@@ -20,6 +20,7 @@ const Index = () => {
   const getData = async () => {
     setIsLoading(true)
     const selectedChain = document.getElementById('addressChain').value
+    console.log(selectedChain)
     const tokenValue = document.getElementById('tokenInput').value
 
     if (selectedChain !== 'selectChain') {
@@ -96,7 +97,7 @@ const Index = () => {
                           <tr key={index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
                             <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <div className='flex items-center gap-2'>
-                                <img src={x.logo === null ? noTokenLogo('bsc') : x.logo} alt='bsc' className='w-7 rounded-full' />
+                                <img src={x.logo === null ? noTokenLogo(moralisIdToSymbol(document.getElementById('addressChain').value)) : x.logo} alt='bsc' className='w-7 rounded-full' />
                                 <Typography>{x.name}</Typography>
                               </div>
                             </th>
@@ -124,7 +125,7 @@ const Index = () => {
             </div>
           ) : (
             <div>
-              <Alert variant='warning' /* text='ვერ მოიძებნა' */ text={`${String(document.getElementById('addressChain').value).toUpperCase()} ქსელზე ${String(document.getElementById('tokenInput').value).toUpperCase()} ტოკენი ვერ მოიძებნა!`} />
+              <Alert variant='warning' text={`${String(document.getElementById('addressChain').value).toUpperCase()} ქსელზე ${String(document.getElementById('tokenInput').value).toUpperCase()} ტოკენი ვერ მოიძებნა!`} />
             </div>
           )}
         </div>

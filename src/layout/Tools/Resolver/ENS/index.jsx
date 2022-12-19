@@ -11,6 +11,7 @@ import { BiCopy } from 'react-icons/bi'
 import { getExplorerURL } from 'utils/WalletHelpers'
 
 const Index = () => {
+  document.title = 'DappFolio - ENS Name'
   const [isLoading, setIsLoading] = useState(Boolean)
   const [data, setData] = useState([])
   const toast = useToast()

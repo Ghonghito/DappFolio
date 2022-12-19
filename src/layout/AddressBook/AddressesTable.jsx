@@ -4,9 +4,9 @@ import Typography from 'components/Typography'
 import Input from 'components/Input'
 import Button from 'components/Button'
 import Modal from 'components/Modal'
+import AddressComponent from 'components/CryptoComponents/AddressComponent'
 import { supportedChains } from 'config'
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai'
-import { shortAddress } from 'utils/WalletHelpers'
 
 const AddressesTable = ({ updated }) => {
   const [open, setOpen] = useState(false)
@@ -87,7 +87,7 @@ const AddressesTable = ({ updated }) => {
                       <Typography className='font-light'>{x.walletName}</Typography>
                     </th>
                     <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                      <Typography className='font-light'>{shortAddress(x.walletAddress, 5)}</Typography>
+                      <AddressComponent address={x.walletAddress} type='wallet' chain={x.chain} />
                     </th>
                     <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                       <div className='flex flex-row items-center gap-2'>

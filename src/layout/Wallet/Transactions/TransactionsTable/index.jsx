@@ -1,18 +1,12 @@
 import React, { useState } from 'react'
 import Card from 'components/Cards/Card'
 import Typography from 'components/Typography'
-import { getChainId, getExplorerURL, shortAddress } from 'utils/WalletHelpers'
-import { useWeb3React } from '@web3-react/core'
+import AddressComponent from 'components/CryptoComponents/AddressComponent'
+import { getChainId, getExplorerURL } from 'utils/WalletHelpers'
 import { supportedChainsList } from 'config'
 
 const Index = ({ nativeTransactions, tokenTransactions, chain }) => {
   const [isNative, setIsNative] = useState(true)
-  const { account } = useWeb3React()
-
-  const itsMe = (address) => {
-    const me = String(address).toLocaleLowerCase() === String(account).toLocaleLowerCase() ? 'შენ' : shortAddress(address, 5)
-    return me
-  }
 
   const formatTimestamp = (timestamp) => {
     const result = String(timestamp).replace('T', ' ').replace('Z', '').replace('.000', '')
@@ -65,9 +59,7 @@ const Index = ({ nativeTransactions, tokenTransactions, chain }) => {
                           {tokenTransactions.result.map((x, Index) => (
                             <tr key={Index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
                               <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                                <a href={getExplorerURL('tx', x.transaction_hash, getChainId(chain))} target='_blank' rel='noreferrer'>
-                                  <Typography className='hover:underline' color='text-primary'>{shortAddress(x.transaction_hash, 5)}</Typography>
-                                </a>
+                                <AddressComponent address={x.transaction_hash} type='tx' chain={chain} />
                               </th>
                               <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                                 <a href={getExplorerURL('block', x.block_number, getChainId(chain))} target='_blank' rel='noreferrer'>
@@ -78,18 +70,10 @@ const Index = ({ nativeTransactions, tokenTransactions, chain }) => {
                                 <Typography>{formatTimestamp(x.block_timestamp)}</Typography>
                               </th>
                               <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                                <a href={getExplorerURL('wallet', x.from_address, getChainId(chain))} target='_blank' rel='noreferrer'>
-                                  <Typography className='hover:underline' color={`${itsMe(x.from_address) === 'შენ' ? '' : 'text-primary'}`}>
-                                    {shortAddress(x.from_address, 5)}
-                                  </Typography>
-                                </a>
+                                <AddressComponent address={x.from_address} type='wallet' chain={chain} />
                               </th>
                               <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                                <a href={getExplorerURL('wallet', x.to_address, getChainId(chain))} target='_blank' rel='noreferrer'>
-                                  <Typography className='hover:underline' color={`${itsMe(x.to_address) === 'შენ' ? '' : 'text-primary'}`}>
-                                    {shortAddress(x.to_address, 5)}
-                                  </Typography>
-                                </a>
+                                <AddressComponent address={x.to_address} type='wallet' chain={chain} />
                               </th>
                             </tr>
                           ))}
@@ -135,9 +119,7 @@ const Index = ({ nativeTransactions, tokenTransactions, chain }) => {
                         {nativeTransactions.result.map((x, Index) => (
                           <tr key={Index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
                             <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                              <a href={getExplorerURL('tx', x.hash, getChainId(chain))} target='_blank' rel='noreferrer'>
-                                <Typography className='hover:underline' color='text-primary'>{shortAddress(x.hash, 5)}</Typography>
-                              </a>
+                              <AddressComponent address={x.hash} type='tx' chain={chain} />
                             </th>
                             <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <a href={getExplorerURL('block', x.block_number, getChainId(chain))} target='_blank' rel='noreferrer'>
@@ -148,22 +130,14 @@ const Index = ({ nativeTransactions, tokenTransactions, chain }) => {
                               <Typography>{formatTimestamp(x.block_timestamp)}</Typography>
                             </th>
                             <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                              <a href={getExplorerURL('wallet', x.from_address, getChainId(chain))} target='_blank' rel='noreferrer'>
-                                <Typography className='hover:underline' color={`${itsMe(x.from_address) === 'შენ' ? '' : 'text-primary'}`}>
-                                  {shortAddress(x.from_address, 5)}
-                                </Typography>
-                              </a>
+                              <AddressComponent address={x.from_address} type='wallet' chain={chain} />
                             </th>
                             <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                              <a href={getExplorerURL('wallet', x.to_address, getChainId(chain))} target='_blank' rel='noreferrer'>
-                                <Typography className='hover:underline' color={`${itsMe(x.to_address) === 'შენ' ? '' : 'text-primary'}`}>
-                                  {shortAddress(x.to_address, 5)}
-                                </Typography>
-                              </a>
+                              <AddressComponent address={x.to_address} type='wallet' chain={chain} />
                             </th>
                             <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                               <Typography className='text-sm'>
-                                {Number(Number(x.gas_price) * Number(x.receipt_gas_used)) / 1e18} {supportedChainsList[chain].coinName}
+                                {Number(Number(Number(x.gas_price) * Number(x.receipt_gas_used)) / 1e18).toFixed(8)} {supportedChainsList[chain].coinName}
                               </Typography>
                             </th>
                           </tr>

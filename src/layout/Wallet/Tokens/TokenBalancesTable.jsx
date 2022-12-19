@@ -5,18 +5,10 @@ import AddtoWallet from 'components/AddToWallet'
 import Send from './ERC20TokenActions/Send'
 import Receive from './ERC20TokenActions/Receive'
 import Card from 'components/Cards/Card'
-import { BiCopy } from 'react-icons/bi'
-import { getChainId, getExplorerURL, shortAddress } from 'utils/WalletHelpers'
+import AddressComponent from 'components/CryptoComponents/AddressComponent'
 import { noTokenLogo } from 'utils/Helpers'
-import { useToast } from 'hooks/useToast'
 
 const TokenBalancesTable = ({ data, chain, loaded }) => {
-  const toast = useToast()
-
-  const copyAddress = (contractAddress) => {
-    navigator.clipboard.writeText(contractAddress);
-    toast('success', 'დაკოპირდა')
-  }
 
   return (
     <div>
@@ -53,14 +45,7 @@ const TokenBalancesTable = ({ data, chain, loaded }) => {
                                 <Typography className=''>{x.symbol}</Typography>
                                 {/*  <AddtoWallet variant='icon' address={x.token_address} symbol={x.symbol} decimal={x.decimals} /> */}
                               </div>
-                              <div className='flex items-center gap-1'>
-                                <a href={getExplorerURL('token', x.token_address, getChainId(chain))} target='_blank' rel='noreferrer'>
-                                  <Typography className='hover:underline text-xs'>
-                                    {shortAddress(x.token_address, 4)}
-                                  </Typography>
-                                </a>
-                                <BiCopy onClick={() => copyAddress(x.token_address)} className='text-zinc-900 dark:text-gray-400 text-xs' />
-                              </div>
+                              <AddressComponent address={x.token_address} type='token' chain={chain} />
                             </div>
                           </div>
                         </th>

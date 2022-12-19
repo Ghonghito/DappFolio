@@ -2,12 +2,10 @@ import React from 'react'
 import Card from 'components/Cards/Card'
 import Typography from 'components/Typography'
 import Alerts from 'components/Alerts'
-import { MdOutlineOpenInNew } from 'react-icons/md'
+import AddressComponent from 'components/CryptoComponents/AddressComponent'
 import { getNFTImage } from 'utils/Helpers'
-import { getChainId, getExplorerURL, shortAddress } from 'utils/WalletHelpers'
 
 const Index = ({ data, chain, loaded }) => {
-
   return (
     <div>
       {!loaded ? (
@@ -33,10 +31,7 @@ const Index = ({ data, chain, loaded }) => {
                               <Typography>მისამართი</Typography>
                             </th>
                             <td>
-                              <a href={getExplorerURL('wallet', data.token_address, getChainId(chain))} target='_blank' rel='noreferrer' className='flex items-center gap-1'>
-                                <p className='text-md text-primary'>{shortAddress(data.token_address, 4)}</p>
-                                <MdOutlineOpenInNew className='text-md text-primary' />
-                              </a>
+                              <AddressComponent address={data.token_address} chain={chain} type='token' />
                             </td>
                           </tr>
                           <tr>
@@ -44,10 +39,7 @@ const Index = ({ data, chain, loaded }) => {
                               <Typography>მფლობელი</Typography>
                             </th>
                             <td>
-                              <a href={getExplorerURL('wallet', data.owner_of, getChainId(chain))} target='_blank' rel='noreferrer' className='flex items-center gap-1'>
-                                <p className='text-md text-primary'>{shortAddress(data.owner_of, 4)}</p>
-                                <MdOutlineOpenInNew className='text-md text-primary' />
-                              </a>
+                              <AddressComponent address={data.owner_of} chain={chain} type='wallet' />
                             </td>
                           </tr>
                           <tr>

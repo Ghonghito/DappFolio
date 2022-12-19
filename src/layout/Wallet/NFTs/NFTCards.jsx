@@ -3,9 +3,8 @@ import LoadingAnimation from 'components/LoadingAnimation'
 import Card from 'components/Cards/Card'
 import Typography from 'components/Typography'
 import Alert from 'components/Alerts'
-import { MdOutlineOpenInNew } from 'react-icons/md'
+import AddressComponent from 'components/CryptoComponents/AddressComponent'
 import { getNFTImage } from 'utils/Helpers'
-import { getExplorerURL, getChainId, shortAddress } from 'utils/WalletHelpers'
 
 const Index = ({ data, loaded, chain }) => {
 
@@ -30,10 +29,7 @@ const Index = ({ data, loaded, chain }) => {
                     <div className='mt-2'>
                       <Typography className='truncate '>{x.name} {x.symbol !== 'ENS' ? `#${x.token_id}` : ''}</Typography>
                       <p className='text-zinc-600 truncate'>{x.name}</p>
-                      <a href={getExplorerURL('token', x.token_address, getChainId(chain))} target='_blank' rel='noreferrer' className='flex items-center gap-1'>
-                        <p className='text-zinc-600 text-sm'>{shortAddress(x.token_address, 5)}</p>
-                        <MdOutlineOpenInNew className='text-zinc-600 text-sm' />
-                      </a>
+                      <AddressComponent address={x.token_address} type='token' chain={chain} />
                     </div>
                   </div>
 

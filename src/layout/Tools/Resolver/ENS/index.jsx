@@ -5,9 +5,10 @@ import Typography from 'components/Typography'
 import Input from 'components/Input'
 import Button from 'components/Button'
 import Alert from 'components/Alerts'
+import AddressComponent from 'components/CryptoComponents/AddressComponent'
 import { useToast } from 'hooks/useToast'
 import { BiCopy } from 'react-icons/bi'
-import { getExplorerURL, shortAddress } from 'utils/WalletHelpers'
+import { getExplorerURL } from 'utils/WalletHelpers'
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(Boolean)
@@ -64,15 +65,11 @@ const Index = () => {
                           <Typography onClick={() => copyData(data.getName.name)} className='cursor-pointer'>
                             <BiCopy />
                           </Typography>
+
                         </div>
                         <div className='flex items-center gap-1'>
                           <Typography>მისამართი: </Typography>
-                          <a href={getExplorerURL('wallet', document.getElementById('address').value, 1)} target='_blank' rel='noreferrer'>
-                            <Typography className='hover:underline'>{shortAddress(document.getElementById('address').value, 5)}</Typography>
-                          </a>
-                          <Typography onClick={() => copyData(document.getElementById('address').value)} className='cursor-pointer'>
-                            <BiCopy />
-                          </Typography>
+                          <AddressComponent address={document.getElementById('address').value} type='wallet' chain={'ETH'} />
                         </div>
                       </div>
                     </Card>

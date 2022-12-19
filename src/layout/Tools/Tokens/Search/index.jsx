@@ -4,6 +4,7 @@ import Input from 'components/Input'
 import Typography from 'components/Typography'
 import Button from 'components/Button'
 import Alert from 'components/Alerts'
+import { Select, Option } from 'components/Select'
 import { useToast } from 'hooks/useToast'
 import { supportedChains } from 'config'
 import { searchTokenBySymbol, searchTokenByContractAddress } from 'utils/APIs/MoralisAPI'
@@ -49,13 +50,12 @@ const Index = () => {
         <Card title='ტოკენის ძებნა'>
           <div className='p-2'>
             <div>
-              <Typography>ქსელი:</Typography>
-              <select id='addressChain' defaultValue='აირჩიეთ ქსელი' className='duration-150 py-2 dark:bg-darkHover border dark-lightBorder dark:border-darkBorder rounded-lg p-2 w-full text-lightText dark:text-darkText focus:outline-none'>
-                <option key='selectChain' value='selectChain'>აირჩიეთ ქსელი</option>
+              <Select id='addressChain' defaultValue='აირჩიეთ ქსელი'>
+                <Option value='selectChain'>აირჩიეთ ქსელი</Option>
                 {supportedChains.map((x) => (
-                  <option key={x.moralisId} value={x.moralisId}>{x.networkName}</option>
+                  <Option key={x.moralisId} value={x.moralisId}>{x.networkName}</Option>
                 ))}
-              </select>
+              </Select>
             </div>
             <Input id='tokenInput' onKeyDown={e => e.key === 'Enter' && getData()} placeholder='ტოკენის სიმბოლო ან კონტრაქტის მისამართი' className='mt-2' />
             <Button onClick={() => getData()} className='mt-2'>ძებნა</Button>

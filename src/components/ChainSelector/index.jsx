@@ -18,13 +18,13 @@ import { AvalancheChain, BNBChain, ETHChain, PolygonChain, FantomChain, CronosCh
 const ChainSelector = () => {
 	const { chainId } = useWeb3React()
 	return (
-		<Menu as='div' className='inline-block text-left'>
-			<Menu.Button className='p-2 w-full rounded-md bg-white dark:bg-darkBorder hover:bg-lightHover dark:hover:bg-darkHover font-medium shadow-md text-white duration-150 hover:scale-[0.98]'>
+		<Menu as='div' className='text-left'>
+			<Menu.Button className='flex-shrink-0 p-2 w-full rounded-md bg-white dark:bg-darkBorder hover:bg-lightHover dark:hover:bg-darkHover font-medium shadow-md text-white duration-150 hover:scale-[0.98]'>
 				<div className='flex items-center justify-between gap-2'>
 					<div>
 						{getChainFullName(chainId)}
 					</div>
-					<FiChevronDown className='h-5 w-5 duration-150 text-zinc-800 dark:text-darkText' aria-hidden='true' />
+					<FiChevronDown className='h-5 w-5 duration-150 text-zinc-800 dark:text-darkText ml-5' aria-hidden='true' />
 				</div>
 			</Menu.Button>
 			<Transition as={Fragment} enter='transition ease-out duration-100' enterFrom='transform opacity-0 scale-95' enterTo='transform opacity-100 scale-100' leave='transition ease-in duration-75' leaveFrom='transform opacity-100 scale-100' leaveTo='transform opacity-0 scale-95'>

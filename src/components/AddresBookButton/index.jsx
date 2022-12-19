@@ -19,6 +19,11 @@ const Index = ({ inputId }) => {
     }
   }
 
+  const pasteAndClose = (walletAddress) => {
+    document.getElementById(inputId).value = walletAddress
+    setOpen(!open)
+  }
+
   useEffect(() => {
     getSavedAddresses()
     // eslint-disable-next-line
@@ -56,7 +61,7 @@ const Index = ({ inputId }) => {
                   </thead>
                   <tbody>
                     {savedAddresses.map((x, index) => (
-                      <tr onClick={() => document.getElementById(inputId).value = x.walletAddress} on key={index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover hover:scale-95'>
+                      <tr onClick={() => pasteAndClose(x.walletAddress)} key={index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
                         <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
                           <Typography>{x.chain}</Typography>
                         </th>

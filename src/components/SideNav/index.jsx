@@ -15,7 +15,7 @@ const Index = ({ children }) => {
 	return (
 		<div>
 			<Transition show={isOpen}
-				className='fixed h-screen flex md:hidden mt-12'
+				className='fixed h-screen flex md:hidden mt-12 z-50'
 				enter='transition ease-in-out duration-300 transform'
 				enterFrom='-translate-x-full'
 				enterTo='translate-x-0'

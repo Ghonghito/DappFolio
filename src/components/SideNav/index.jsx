@@ -3,7 +3,6 @@ import Logo from 'assets/images/logo.svg'
 import SidenavItem from './SidenavItem'
 import Navbar from 'components/WalletConnection'
 import Avatar from '../Avatar'
-import DarkModeButton from 'components/DarkModeButton'
 import { Transition } from '@headlessui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { AiOutlineClose } from 'react-icons/ai'
@@ -35,12 +34,9 @@ const Index = ({ children }) => {
 							<AiOutlineClose className='text-lightText dark:text-white group-hover:text-white text-xl' />
 						</div>
 					</div>
-					<div className='h-screen flex flex-col justify-between mt-5'>
+					<div className='h-screen mt-5'>
 						<div>
 							<SidenavItem menuItem={menuItem} />
-						</div>
-						<div className='mb-12' >
-							<DarkModeButton />
 						</div>
 					</div>
 				</div>
@@ -53,12 +49,9 @@ const Index = ({ children }) => {
 							{dappNameGradient()}
 						</div>
 					</a>
-					<div className='h-screen flex flex-col justify-between mt-5'>
+					<div className='h-screen mt-5'>
 						<div>
 							<SidenavItem menuItem={menuItem} />
-						</div>
-						<div>
-							<DarkModeButton />
 						</div>
 					</div>
 				</div>

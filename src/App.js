@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Sidenav from './components/SideNav'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ToastContainer from './components/Toast/ToastContainer';
@@ -14,6 +15,21 @@ import ENSName from 'layout/Tools/Resolver/ENS'
 import UDName from 'layout/Tools/Resolver/UnstoppableDomain'
 
 function App() {
+
+  useEffect(() => {
+    const darkModeSet = localStorage.getItem('darkMode')
+    if (darkModeSet === null) {
+      localStorage.setItem('darkMode', 'dark')
+      document.documentElement.classList.add('dark')
+    } else if (darkModeSet === 'light') {
+      localStorage.setItem('darkMode', 'dark')
+      document.documentElement.classList.add('dark')
+    } else if (darkModeSet === 'dark') {
+      localStorage.setItem('darkMode', 'light')
+      document.documentElement.classList.remove('dark')
+    }
+  }, [])
+
   return (
     <div>
       <div className='duration-200 min-h-screen bg-lightBackground dark:bg-darkBackground'>

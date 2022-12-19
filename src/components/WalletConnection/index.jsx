@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import DisconnectButton from './DisconnectButton'
 import ConnectButton from './ConnectButton'
+import DarkModeButton from 'components/DarkModeButton'
 import { useToast } from 'hooks/useToast';
 import { injected } from './connectors';
 import { useWeb3React } from '@web3-react/core'
@@ -38,12 +39,13 @@ export default function Modal() {
 	}, []);
 
 	return (
-		<div className='p-3 flex items-center'>
+		<div className='p-3 flex items-center gap-2'>
 			{active === true && isConnected === 'true' ? (
 				<div>
-					{chainId === 1 || chainId === 56 || chainId === 43114 || chainId === 250 || chainId === 137 || chainId === 25 || chainId === 42161 ? <DisconnectButton /> : <WrongNetwork changeTo='BSC' text='არასწორი ქსელი' />}
+					{chainId === 1 || chainId === 56 || chainId === 43114 || chainId === 250 || chainId === 137 || chainId === 25 || chainId === 42161 ? <DisconnectButton /> : <WrongNetwork changeTo='ETH' text='არასწორი ქსელი' />}
 				</div>
 			) : <ConnectButton />}
+			<DarkModeButton />
 		</div>
 	);
 }

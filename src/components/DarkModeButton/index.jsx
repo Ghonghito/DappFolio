@@ -23,11 +23,10 @@ const Index = () => {
     // eslint-disable-next-line
   }, [])
 
-
   return (
     <div className='flex'>
-      <div onClick={() => setDarkMode()} className='duration-150 hover:scale-95 bg-primary shadow-md hover:bg-primaryDark p-2 rounded-lg cursor-pointer'>
-        {darkModeSet === 'light' ? <MdDarkMode className='text-2xl text-white' /> : <MdDarkMode className='text-2xl text-white' />}
+      <div onClick={() => setDarkMode()} className='flex items-center justify-center font-bold gap-2 p-2 w-full rounded-md bg-white dark:bg-darkBorder hover:bg-lightHover dark:hover:bg-darkHover shadow-md duration-150 hover:scale-[0.98] cursor-pointer'>
+        {darkModeSet === 'light' ? <MdDarkMode className='text-2xl text-primary dark:text-zinc-300 ' /> : <MdDarkMode className='text-2xl text-primary dark:text-zinc-300 ' />}
       </div>
     </div>
   )

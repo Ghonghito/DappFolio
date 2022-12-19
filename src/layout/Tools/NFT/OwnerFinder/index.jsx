@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import Card from 'components/Cards/Card'
 import Input from 'components/Input'
 import Button from 'components/Button'
-import Typography from 'components/Typography'
 import { Select, Option } from 'components/Select'
 import { useToast } from 'hooks/useToast'
 import { supportedChains } from 'config'
 import { getNFTOwner } from 'utils/APIs/MoralisAPI'
 import NFTCard from './NFTCard'
+import { moralisIdToSymbol } from 'utils/Helpers'
 
 const Index = () => {
   document.title = 'DappFolio - NFT მფლობელის ძებნა'
@@ -39,7 +39,7 @@ const Index = () => {
   }
 
   return (
-    <div className='flex flex-col-reverse items-center justify-center'>
+    <div className='flex flex-col items-center justify-center'>
       <div className='w-full md:w-[450px]'>
         <Card title='NFT მფლობელის ძებნა'>
           <div className='p-2'>
@@ -58,7 +58,7 @@ const Index = () => {
         </Card>
       </div>
       {!isLoading ? (
-        <NFTCard data={nftData} chain={document.getElementById('addressChain').value} loaded={isLoading} />
+        <NFTCard data={nftData} chain={moralisIdToSymbol(document.getElementById('addressChain').value)} loaded={isLoading} />
       ) : null}
     </div>
   )

@@ -6,18 +6,18 @@ import { MdOutlineOpenInNew } from 'react-icons/md'
 import { getNFTImage } from 'utils/Helpers'
 import { getChainId, getExplorerURL, shortAddress } from 'utils/WalletHelpers'
 
-const Index = ({data, chain, loaded}) => {
+const Index = ({ data, chain, loaded }) => {
 
   return (
     <div>
       {!loaded ? (
         <div>
           {Object.keys(data).length > 1 ? (
-            <div className='w-full md:w-[550px] mb-3'>
+            <div className='mt-3'>
               <Card>
-                <div className='p-3 flex flex-col md:flex-row gap-2'>
+                <div className='p-3 flex flex-col gap-2'>
                   <div className='flex flex-col gap-2 items-center'>
-                    <img src={getNFTImage(data.normalized_metadata.image)} alt={data.name} className='rounded-lg w-[250px]' />
+                    <img src={getNFTImage(data.normalized_metadata.image)} alt={data.name} className='rounded-lg w-[300px]' />
                     <div className='flex items-center gap-1'>
                       <Typography className='text-lg'>{data.name}</Typography>
                       <Typography className='text-lg truncate'>#{data.token_id}</Typography>
@@ -25,12 +25,12 @@ const Index = ({data, chain, loaded}) => {
                     <Typography className='text-sm'>{data.contract_type}</Typography>
                   </div>
                   <div>
-                    <div className='w-full md:w-[300px] border-2 border-gray-400 dark:border-gray-600 rounded-lg px-3 py-2'>
+                    <div className='w-full md:w-[300px] border-2 border-lightBorder dark:border-darkBorder rounded-lg px-3 py-2'>
                       <table className='w-full text-left text-white'>
                         <tbody>
                           <tr className=''>
                             <th>
-                              <p className='text-zinc-700 dark:text-zinc-400 font-semibold'>მისამართი</p>
+                              <Typography>მისამართი</Typography>
                             </th>
                             <td>
                               <a href={getExplorerURL('wallet', data.token_address, getChainId(chain))} target='_blank' rel='noreferrer' className='flex items-center gap-1'>
@@ -41,7 +41,7 @@ const Index = ({data, chain, loaded}) => {
                           </tr>
                           <tr>
                             <th>
-                              <p className='text-zinc-700 dark:text-zinc-400 font-semibold'>მფლობელი</p>
+                              <Typography>მფლობელი</Typography>
                             </th>
                             <td>
                               <a href={getExplorerURL('wallet', data.owner_of, getChainId(chain))} target='_blank' rel='noreferrer' className='flex items-center gap-1'>
@@ -52,7 +52,7 @@ const Index = ({data, chain, loaded}) => {
                           </tr>
                           <tr>
                             <th>
-                              <p className='text-zinc-700 dark:text-zinc-400 font-semibold'>ID</p>
+                              <Typography>ID</Typography>
                             </th>
                             <td>
                               <p className='text-primary'>{data.token_id}</p>
@@ -60,7 +60,7 @@ const Index = ({data, chain, loaded}) => {
                           </tr>
                           <tr>
                             <th>
-                              <p className='text-zinc-700 dark:text-zinc-400 font-semibold'>სიმბოლო</p>
+                              <Typography>სიმბოლო</Typography>
                             </th>
                             <td>
                               <p className='text-primary'>{data.symbol}</p>
@@ -68,7 +68,7 @@ const Index = ({data, chain, loaded}) => {
                           </tr>
                           <tr>
                             <th>
-                              <p className='text-zinc-700 dark:text-zinc-400 font-semibold'>ქსელი</p>
+                              <Typography>ქსელი</Typography>
                             </th>
                             <td>
                               <p className='text-primary'>{String(chain).toUpperCase()}F</p>
@@ -86,7 +86,7 @@ const Index = ({data, chain, loaded}) => {
                         <div key={x.trait_type} className='border-[1px] border-gray-400 dark:border-gray-600 rounded-lg px-3 py-2'>
                           <div className='flex flex-col items-center justify-center'>
                             <p className='text-zinc-700 dark:text-zinc-400 font-semibold text-xs'>{String(x.trait_type).toUpperCase()}</p>
-                            <p className='text-zinc-700 dark:text-zinc-400 font-semibold'>{x.value}</p>
+                            <Typography>{x.value}</Typography>
                           </div>
                         </div>
                       ))}

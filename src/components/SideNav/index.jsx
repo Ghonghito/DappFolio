@@ -35,29 +35,29 @@ const Index = ({ children }) => {
 							<AiOutlineClose className='text-lightText dark:text-white group-hover:text-white text-xl' />
 						</div>
 					</div>
-					<div className='h-screen mt-5'>
+					<div className='h-screen flex flex-col justify-between mt-5'>
 						<div>
 							<SidenavItem menuItem={menuItem} />
 						</div>
-						<div className='fixed bottom-0'>
+						<div className='mb-12' >
 							<DarkModeButton />
 						</div>
 					</div>
 				</div>
 			</Transition>
 			<div className='md:flex'>
-				<div className='hidden md:flex h-screen sticky overflow-y-hidden top-0 flex-col p-4 duration-150 border-r border-lightHover dark:border-darkCard min-h-screen w-[300px]'>
+				<div className='hidden md:flex h-screen sticky overflow-y-auto top-0 flex-col p-4 duration-150 border-r border-lightHover dark:border-darkCard min-h-screen w-[300px]'>
 					<a href='/'>
 						<div className='flex items-center gap-3 cursor-pointer'>
 							<Avatar src={Logo} alt='DappFolio ლოგო' className='w-9' />
 							{dappNameGradient()}
 						</div>
 					</a>
-					<div className='flex flex-col h-screen mt-5'>
+					<div className='h-screen flex flex-col justify-between mt-5'>
 						<div>
 							<SidenavItem menuItem={menuItem} />
 						</div>
-						<div className='mt-auto bottom-0'>
+						<div>
 							<DarkModeButton />
 						</div>
 					</div>

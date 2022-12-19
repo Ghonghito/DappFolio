@@ -36,11 +36,11 @@ const Send = ({ data, chain, ...rest }) => {
           <div className='mt-3'>
             <div className='text-left'>
               <Typography className='font-light text-sm'>ბალანსი: {Number(data.balance / 10 ** data.decimals).toLocaleString('en-US')}</Typography>
-              <Input placeholder='რაოდენობა' className='w-full md:w-[250px]w-[250px] mt-1 placeholder:text-zinc-400' />
+              <Input placeholder='რაოდენობა' className='w-full mt-1 placeholder:text-zinc-400' />
             </div>
             <div className='mt-2'>
               <div className='flex items-center gap-2'>
-                <Input id='reciverAddress' placeholder='მიმღების მისამართი' className='w-full md:w-[250px] placeholder:text-zinc-400' />
+                <Input id='reciverAddress' placeholder='მიმღების მისამართი' className='w-full placeholder:text-zinc-400' />
                 <AddressBookButton inputId='reciverAddress' />
               </div>
             </div>

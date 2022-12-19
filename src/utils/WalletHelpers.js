@@ -50,19 +50,19 @@ export const getChainName = (chainId) => {
   // eslint-disable-next-line
   switch (chainId) {
     case 1:
-      return 'eth'
+      return 'ETH'
     case 56:
-      return 'bsc'
+      return 'BSC'
     case 43114:
-      return 'avax'
+      return 'AVAX'
     case 250:
-      return 'ftm'
+      return 'FTM'
     case 137:
-      return 'matic'
+      return 'MATIC'
     case 25:
-      return 'cro'
+      return 'CRO'
     case 42161:
-      return 'arb'
+      return 'ARB'
     default:
       return 'Wrong Network'
   }
@@ -71,19 +71,19 @@ export const getChainName = (chainId) => {
 export const getChainId = (chainName) => {
   // eslint-disable-next-line
   switch (chainName) {
-    case 'eth':
+    case 'ETH':
       return 1
-    case 'bsc':
+    case 'BSC':
       return 56
-    case 'avax':
+    case 'AVAX':
       return 43114
-    case 'ftm':
+    case 'FTM':
       return 250
-    case 'matic':
+    case 'MATIC':
       return 137
-    case 'cro':
+    case 'CRO':
       return 25
-    case 'arb':
+    case 'ARB':
       return 42161
     default:
       return 'Wrong Network'

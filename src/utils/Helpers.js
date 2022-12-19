@@ -19,6 +19,27 @@ export const noTokenLogo = (chain) => {
   }
 }
 
+export const moralisIdToSymbol = (id) => {
+  switch (id) {
+    case 'eth':
+      return 'ETH'
+    case 'bsc':
+      return 'BSC'
+    case 'polygon':
+      return 'MATIC'
+    case 'avalanche':
+      return 'AVAX'
+    case 'fantom':
+      return 'FTM'
+    case 'cronos':
+      return 'CRO'
+    case 'arbitrum':
+      return 'ARB'
+    default:
+      return ''
+  }
+}
+
 export const getNFTImage = (url) => {
   if (url !== null) {
     if (String(url).includes('https://meta.space.id/')) {
@@ -34,3 +55,4 @@ export const getNFTImage = (url) => {
     return 'https://react.semantic-ui.com/images/wireframe/image.png'
   }
 }
+

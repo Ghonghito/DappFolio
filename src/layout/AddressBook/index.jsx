@@ -11,7 +11,7 @@ const Index = () => {
   document.title = 'DappFolio - მისამართების წიგნი'
   const [isUpdated, setIsUpdated] = useState(0)
   const toast = useToast()
-  
+
   const saveAddress = () => {
     var existingAddresses = JSON.parse(localStorage.getItem('addressBook'))
     if (existingAddresses === null) existingAddresses = []
@@ -44,7 +44,7 @@ const Index = () => {
   return (
     <div className='flex flex-col md:flex-row justify-center gap-2'>
       <div className='w-full md:w-[350px]'>
-        <Card title='საფულის დამათება წიგნაკში'>
+        <Card title='საფულის დამატება წიგნაკში'>
           <div className='p-2'>
             <div>
               <Select id='addressChain' defaultValue='აირჩიეთ ქსელი'>

@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import Card from 'components/Cards/Card'
 import Button from 'components/Button'
-import Typography from 'components/Typography'
 import Input from 'components/Input'
 import AddressesTable from './AddressesTable'
+import { Select, Option } from 'components/Select'
 import { supportedChains } from 'config'
+import { useToast } from 'hooks/useToast'
 
 const Index = () => {
   document.title = 'DappFolio - მისამართების წიგნი'
   const [isUpdated, setIsUpdated] = useState(0)
-
+  const toast = useToast()
+  
   const saveAddress = () => {
     var existingAddresses = JSON.parse(localStorage.getItem('addressBook'))
     if (existingAddresses === null) existingAddresses = []
@@ -17,33 +19,45 @@ const Index = () => {
     const getWalletChain = document.getElementById('addressChain').value
     const getWalletName = document.getElementById('walletName').value
     const getWalletAddress = document.getElementById('walletAddress').value
-    const result = { chain: String(getWalletChain).toUpperCase(), walletName: getWalletName, walletAddress: getWalletAddress }
 
-    localStorage.setItem('entry', JSON.stringify(result))
-    existingAddresses.push(result)
-    localStorage.setItem('addressBook', JSON.stringify(existingAddresses))
-    setIsUpdated(isUpdated + 1)
+    if (getWalletChain !== 'selectChain') {
+      if (getWalletName !== '') {
+        if (getWalletAddress !== '') {
+          const result = { chain: String(getWalletChain).toUpperCase(), walletName: getWalletName, walletAddress: getWalletAddress }
+
+          localStorage.setItem('entry', JSON.stringify(result))
+          existingAddresses.push(result)
+          localStorage.setItem('addressBook', JSON.stringify(existingAddresses))
+          setIsUpdated(isUpdated + 1)
+        } else {
+          toast('error', 'შეიყვანეთ საფულის მისამართი')
+        }
+      } else {
+        toast('error', 'შეიყვანეთ სახელი')
+      }
+    } else {
+      toast('error', 'აირჩიეთ ქსელი')
+    }
+
   }
 
   return (
     <div className='flex flex-col md:flex-row justify-center gap-2'>
       <div className='w-full md:w-[350px]'>
         <Card title='საფულის დამათება წიგნაკში'>
-          <div className='p-3'>
+          <div className='p-2'>
             <div>
-              <Typography>ქსელი:</Typography>
-              <select id="addressChain" defaultValue='აირჩიეთ ქსელი' className='duration-150 py-2 dark:bg-darkHover border dark-lightBorder dark:border-darkBorder rounded-lg p-2 w-full text-lightText dark:text-darkText focus:outline-none'>
+              <Select id='addressChain' defaultValue='აირჩიეთ ქსელი'>
+                <Option value='selectChain'>აირჩიეთ ქსელი</Option>
                 {supportedChains.map((x) => (
-                  <option key={x.networkName} value={x.networkSymbol}>{x.networkName}</option>
+                  <Option key={x.networkName} value={x.networkSymbol}>{x.networkName}</Option>
                 ))}
-              </select>
+              </Select>
             </div>
-            <div className='mt-3'>
-              <Typography>სახელი:</Typography>
-              <Input id='walletName' placeholder='სახელი' />
+            <div className='mt-2'>
+              <Input id='walletName' placeholder='საფულის სახელი' />
             </div>
-            <div className='mt-3'>
-              <Typography>მისამართი:</Typography>
+            <div className='mt-2'>
               <Input id='walletAddress' placeholder='საფულის მისამართი' />
             </div>
             <div className='mt-2'>

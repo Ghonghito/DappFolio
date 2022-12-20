@@ -12,16 +12,16 @@ const options = {
 export const getWalletNativeBalance = async (walletAddress, chain) => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/${walletAddress}/balance?chain=${chain}`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch(() => 'error')
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };
 
 export const getWalletTokensBalance = async (walletAddress, chain) => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/${walletAddress}/erc20?chain=${chain}`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };
 
@@ -39,79 +39,79 @@ export const getWalletNativeCrossChainBalance = async (walletAddress) => {
 export const getWalletTokenTransactions = async (walletAddress, chain) => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/${walletAddress}/erc20/transfers?chain=${chain}`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };
 
 export const getWalletNativeTransactions = async (walletAddress, chain) => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/${walletAddress}?chain=${chain}`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };
 
 export const getTokenMetadata = async (contractAddress) => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/erc20/metadata?chain=bsc&addresses=${contractAddress}`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json
 }
 
 export const getWalletNFTsBalance = async (walletAddress, chain) => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/${walletAddress}/nft?chain=${chain}&format=decimal&normalizeMetadata=true`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };
 
 export const searchTokenBySymbol = async (symbol, chain) => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/erc20/metadata/symbols?chain=${chain}&symbols=${symbol}`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };
 
 export const searchTokenByContractAddress = async (contractAddress, chain) => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/erc20/metadata?chain=${chain}&addresses=${contractAddress}`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };
 
 export const getTransactionsByContract = async () => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/erc20/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82/transfers?chain=bsc`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };
 
 export const getNFTOwner = async (contractAddress, id, chain) => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/nft/${contractAddress}/${id}?chain=${chain}&format=decimal&normalizeMetadata=true`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };
 
 export const resolveENSAddress = async (address) => {
   const json = await fetch(`https://try.readme.io/https://deep-index.moralis.io/api/v2/resolve/${address}/reverse`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };
 
 export const resolveUDName = async (name) => {
   const json = await fetch(`https://deep-index.moralis.io/api/v2/resolve/${name}`, options)
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log(error))
+    .then((data) => { return { data, status: 200 } })
+    .catch((error) => { return { error, status: 404 } })
   return json;
 };

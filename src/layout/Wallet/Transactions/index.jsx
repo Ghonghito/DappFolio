@@ -17,7 +17,7 @@ import { getWalletNativeTransactions, getWalletTokenTransactions } from 'utils/A
 const Index = () => {
   document.title = 'DappFolio - ტრანზაქციები'
   const { account, active } = useWeb3React()
-  const [isLoading, setIsLoading] = useState(Boolean)
+  const [isLoading, setIsLoading] = useState(true)
   const [bscNativeTransactions, setBscNativeTransactions] = useState([])
   const [bscTokenTransactions, setBscTokenTransactions] = useState([])
 

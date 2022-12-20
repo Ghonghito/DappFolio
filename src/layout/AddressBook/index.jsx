@@ -24,7 +24,6 @@ const Index = () => {
       if (getWalletName !== '') {
         if (getWalletAddress !== '') {
           const result = { chain: String(getWalletChain).toUpperCase(), walletName: getWalletName, walletAddress: getWalletAddress }
-
           localStorage.setItem('entry', JSON.stringify(result))
           existingAddresses.push(result)
           localStorage.setItem('addressBook', JSON.stringify(existingAddresses))

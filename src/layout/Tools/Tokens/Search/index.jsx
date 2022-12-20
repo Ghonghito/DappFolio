@@ -21,7 +21,6 @@ const Index = () => {
   const getData = async () => {
     setIsLoading(true)
     const selectedChain = document.getElementById('addressChain').value
-    console.log(selectedChain)
     const tokenValue = document.getElementById('tokenInput').value
 
     if (selectedChain !== 'selectChain') {
@@ -64,68 +63,76 @@ const Index = () => {
       </div>
       {!isLoading ? (
         <div>
-          {Object.keys(data).length > 0 ? (
+          {data.status === 200 ? (
             <div>
-              <Card>
-                <div className='px-3 py-2'>
-                  <Typography>ნაპონვია {data.length} ტოკენი</Typography>
-                </div>
+              {Object.keys(data.data).length > 0 ? (
                 <div>
-                  <div className='overflow-y-auto'>
-                    <table className='border-collapse table-auto w-full text-sm text-left duration-150 bg-white dark:bg-darkCard rounded-lg'>
-                      <thead className='text-gray-500 text-xs'>
-                        <tr>
-                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
-                            სახელი
-                          </th>
-                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
-                            სიმბოლო
-                          </th>
-                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
-                            კონტრაქტი
-                          </th>
-                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
-                            Decimal
-                          </th>
-                          <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
+                  <Card>
+                    <div className='px-3 py-2'>
+                      <Typography>ნაპონვია {data.data.length} ტოკენი</Typography>
+                    </div>
+                    <div>
+                      <div className='overflow-y-auto'>
+                        <table className='border-collapse table-auto w-full text-sm text-left duration-150 bg-white dark:bg-darkCard rounded-lg'>
+                          <thead className='text-gray-500 text-xs'>
+                            <tr>
+                              <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
+                                სახელი
+                              </th>
+                              <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
+                                სიმბოლო
+                              </th>
+                              <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
+                                კონტრაქტი
+                              </th>
+                              <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
+                                Decimal
+                              </th>
+                              <th scope='col' className='duration-150 border-b dark:border-darkBorder px-6 py-3'>
 
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {data.map((x, index) => (
-                          <tr key={index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
-                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                              <div className='flex items-center gap-2'>
-                                <img src={x.logo === null ? noTokenLogo(moralisIdToSymbol(document.getElementById('addressChain').value)) : x.logo} alt='bsc' className='w-7 rounded-full' />
-                                <Typography>{x.name}</Typography>
-                              </div>
-                            </th>
-                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                              <Typography>{x.symbol}</Typography>
-                            </th>
-                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                              <a href={getExplorerURL('token', x.address, getChainId('bsc'))} target='_blank' rel='noreferrer'>
-                                <Typography className='hover:underline'>{shortAddress(x.address, 5)}</Typography>
-                              </a>
-                            </th>
-                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                              <Typography>{x.decimals}</Typography>
-                            </th>
-                            <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
-                              <AddtoWallet variant='text' address={x.address} symbol={x.symbol} decimal={x.decimals} />
-                            </th>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {data.data.map((x, index) => (
+                              <tr key={index} className='w-full cursor-pointer duration-150 hover:bg-lightHover dark:hover:bg-darkHover'>
+                                <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
+                                  <div className='flex items-center gap-2'>
+                                    <img src={x.logo === null ? noTokenLogo(moralisIdToSymbol(document.getElementById('addressChain').value)) : x.logo} alt='bsc' className='w-7 rounded-full' />
+                                    <Typography>{x.name}</Typography>
+                                  </div>
+                                </th>
+                                <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
+                                  <Typography>{x.symbol}</Typography>
+                                </th>
+                                <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
+                                  <a href={getExplorerURL('token', x.address, getChainId('bsc'))} target='_blank' rel='noreferrer'>
+                                    <Typography className='hover:underline'>{shortAddress(x.address, 5)}</Typography>
+                                  </a>
+                                </th>
+                                <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
+                                  <Typography>{x.decimals}</Typography>
+                                </th>
+                                <th className='duration-150 border-b dark:border-darkBorder px-6 py-4'>
+                                  <AddtoWallet variant='text' address={x.address} symbol={x.symbol} decimal={x.decimals} />
+                                </th>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
-              </Card>
+              ) : (
+                <div>
+                  <Alert variant='warning' text={`${String(document.getElementById('addressChain').value).toUpperCase()} ქსელზე ${String(document.getElementById('tokenInput').value).toUpperCase()} ტოკენი ვერ მოიძებნა!`} />
+                </div>
+              )}
             </div>
           ) : (
             <div>
-              <Alert variant='warning' text={`${String(document.getElementById('addressChain').value).toUpperCase()} ქსელზე ${String(document.getElementById('tokenInput').value).toUpperCase()} ტოკენი ვერ მოიძებნა!`} />
+              <Alert variant='error' text='API კავშირი ვერ მოხერხდა.' />
             </div>
           )}
         </div>

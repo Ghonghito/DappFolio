@@ -1,3 +1,5 @@
+import Alerts from 'components/Alerts'
+
 export const noTokenLogo = (chain) => {
   switch (chain) {
     case 'BSC':
@@ -56,3 +58,22 @@ export const getNFTImage = (url) => {
   }
 }
 
+export const apiErrorFilter = (error) => {
+  if (String(error).includes('is not a valid hex address')) {
+    return <div className='w-full mt-3'>
+      <Alerts variant='warning' text='შეყვანილი მისამართი არასწორია!' />
+    </div>
+  } else if (error === 'No metadata found! Try again later') {
+    return <div className='w-full mt-3'>
+      <Alerts variant='warning' text='ვერ მოიძებნა!' />
+    </div>
+  } else if (String(error).includes('is not registered') && String(error).includes('Domain')) {
+    return <div className='w-full mt-3'>
+      <Alerts variant='warning' text='სახელი რეგისტრირებული არაა!' />
+    </div>
+  } else if (error === 404) {
+    return <div className='w-full mt-3'>
+      <Alerts variant='warning' text='API კავშირი ვერ მოხერხდა! სცადეთ მოგვიანებით!' />
+    </div>
+  }
+}

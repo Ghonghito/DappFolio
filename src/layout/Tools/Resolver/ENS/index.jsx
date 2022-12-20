@@ -17,23 +17,15 @@ const Index = () => {
   const toast = useToast()
 
   const getData = async () => {
-    setData([])
     const addressToResolve = document.getElementById('address').value
     if (addressToResolve !== '') {
+      setData([])
       setIsLoading(true)
       const getName = await resolveENSAddress(addressToResolve)
-      if (getName.name === null) {
-        setData({ status: 404, name: null })
-        setIsLoading(false)
-      } else if ('reason' in getName) {
-        setData({ status: 404, name: 'invalid_address' })
-        setIsLoading(false)
-      } else {
-        setData({ status: 200, getName })
-        setIsLoading(false)
-      }
+      setData(getName)
+      setIsLoading(false)
     } else {
-      toast('error', 'შეიყვანეთ მისამართი!')
+      toast('error', 'შეიყვანეთ მისამართი')
     }
   }
 
@@ -50,43 +42,38 @@ const Index = () => {
             <Button onClick={() => getData()} className='mt-2'>ძებნა</Button>
           </div>
         </Card>
-        {!isLoading ? (
+        {isLoading === false ? (
           <div className='mt-3'>
             {Object.keys(data).length > 0 && (
               <div>
                 {data.status === 200 ? (
                   <div>
-                    <Card>
-                      <div className='p-2'>
-                        <div className='flex items-center gap-1'>
-                          <Typography>სახელი: </Typography>
-                          <a href={getExplorerURL('wallet', document.getElementById('address').value, 1)} target='_blank' rel='noreferrer'>
-                            <Typography className='hover:underline'>{data.getName.name}</Typography>
-                          </a>
-                          <Typography onClick={() => copyData(data.getName.name)} className='cursor-pointer'>
-                            <BiCopy />
-                          </Typography>
+                    {data.data.name !== null && String(data.data.name).includes('.eth') ? (
+                      <Card>
+                        <div className='p-2'>
+                          <div className='flex items-center gap-1'>
+                            <Typography>სახელი: </Typography>
+                            <a href={getExplorerURL('wallet', document.getElementById('address').value, 1)} target='_blank' rel='noreferrer'>
+                              <Typography className='hover:underline'>{data.data.name}</Typography>
+                            </a>
+                            <Typography onClick={() => copyData(data.data.name)} className='cursor-pointer'>
+                              <BiCopy />
+                            </Typography>
 
+                          </div>
+                          <div className='flex items-center gap-1'>
+                            <Typography>მისამართი: </Typography>
+                            <AddressComponent address={document.getElementById('address').value} type='wallet' chain={'ETH'} />
+                          </div>
                         </div>
-                        <div className='flex items-center gap-1'>
-                          <Typography>მისამართი: </Typography>
-                          <AddressComponent address={document.getElementById('address').value} type='wallet' chain={'ETH'} />
-                        </div>
-                      </div>
-                    </Card>
+                      </Card>
+                    ) : (
+                      <Alert variant='warning' text='სახელი რეგისტრირებული არაა' />
+                    )}
                   </div>
                 ) : (
-                  <div className='mt-2'>
-                    {data.status === 404 && data.name === null && (
-                      <div>
-                        <Alert variant='error' text='სახელი რეგისტრირებული არაა!' />
-                      </div>
-                    )}
-                    {data.status === 404 && data.name === 'invalid_address' && (
-                      <div>
-                        <Alert variant='error' text='მისამართი არასოწორია!' />
-                      </div>
-                    )}
+                  <div>
+                    <Alert variant='error' text='API კავშირი ვერ მოხერხდა.' />
                   </div>
                 )}
               </div>

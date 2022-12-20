@@ -70,57 +70,57 @@ const Index = () => {
       symbol: 'BSC',
       image: BSC,
       logoWidth: 'w-4',
-      tokens: bscTokensBalance.length
+      tokens: Object.keys(bscTokensBalance).length > 0 ? Object.keys(bscTokensBalance.data).length : 0
     },
     {
       name: 'Ethereum',
       symbol: 'ETH',
       image: ETH,
       logoWidth: 'w-3',
-      tokens: ethTokensBalance.length
+      tokens: Object.keys(ethTokensBalance).length > 0 ? Object.keys(ethTokensBalance.data).length : 0
     },
     {
       name: 'Avalanche',
       symbol: 'AVAX',
       image: AVAX,
       logoWidth: 'w-4',
-      tokens: avaxTokensBalance.length
+      tokens: Object.keys(avaxTokensBalance).length > 0 ? Object.keys(avaxTokensBalance.data).length : 0
     },
     {
       name: 'Polygon',
       symbol: 'MATIC',
       image: Polygon,
       logoWidth: 'w-4',
-      tokens: maticTokensBalance.length
+      tokens: Object.keys(maticTokensBalance).length > 0 ? Object.keys(maticTokensBalance.data).length : 0
     },
     {
       name: 'Fantom',
       symbol: 'FTM',
       image: Fantom,
       logoWidth: 'w-3',
-      tokens: ftmTokensBalance.length
+      tokens: Object.keys(ftmTokensBalance).length > 0 ? Object.keys(ftmTokensBalance.data).length : 0
     },
     {
       name: 'Cronos',
       symbol: 'CRO',
       image: Cronos,
       logoWidth: 'w-4',
-      tokens: croTokensBalance.length
+      tokens: Object.keys(croTokensBalance).length > 0 ? Object.keys(croTokensBalance.data).length : 0
     },
     {
       name: 'Arbitrum',
       symbol: 'ARB',
       image: Arbitrum,
       logoWidth: 'w-4',
-      tokens: arbitrumTokensBalance.length
+      tokens: Object.keys(arbitrumTokensBalance).length > 0 ? Object.keys(arbitrumTokensBalance.data).length : 0
     },
   ]
 
   return (
     <div>
+      <NativeBalances />
       {active ? (
         <div>
-          <NativeBalances />
           {!isLoading ? (
             <div>
               <div>

@@ -87,7 +87,7 @@ export const getChainFullName = (chainId) => {
   switch (chainId) {
     case 1:
       return <div className='flex flex-row items-center gap-1'>
-        <div className='flex-shrink-0 bg-blue-500 p-1 rounded-lg'>
+        <div className='bg-blue-500 p-1 rounded-lg w-6 h-6 flex justify-center items-center'>
           <Avatar src={ETH} alt='eth' className='w-3' />
         </div>
         <p className='whitespace-nowrap font-semibold text-sm hidden md:flex'>ETH</p>
@@ -95,7 +95,7 @@ export const getChainFullName = (chainId) => {
       </div>
     case 56:
       return <div className='flex flex-row items-center gap-1'>
-        <div className='flex-shrink-0 bg-yellow-500 p-1 rounded-lg'>
+        <div className='bg-yellow-500 p-1 rounded-lg w-6 h-6 flex justify-center items-center'>
           <Avatar src={BSC} alt='bsc' className='w-4' />
         </div>
         <p className='whitespace-nowrap font-semibold text-sm hidden md:flex text-zinc-600 dark:text-zinc-300'>Smart Chain</p>
@@ -103,7 +103,7 @@ export const getChainFullName = (chainId) => {
       </div>
     case 43114:
       return <div className='flex flex-row items-center gap-1'>
-        <div className='flex-shrink-0 bg-red-500 p-1 rounded-lg'>
+        <div className='bg-red-500 p-1 rounded-lg w-6 h-6 flex justify-center items-center'>
           <Avatar src={AVAX} alt='avax' className='w-4' />
         </div>
         <p className='whitespace-nowrap font-semibold text-sm hidden md:flex'>Avalanche</p>
@@ -111,7 +111,7 @@ export const getChainFullName = (chainId) => {
       </div>
     case 250:
       return <div className='flex flex-row items-center gap-1'>
-        <div className='flex-shrink-0 bg-blue-400 p-1 rounded-lg'>
+        <div className='bg-blue-400 p-1 rounded-lg w-6 h-6 flex justify-center items-center'>
           <Avatar src={FANTOM} alt='fantom' className='w-3' />
         </div>
         <p className='whitespace-nowrap font-semibold text-sm hidden md:flex'>Fantom</p>
@@ -119,7 +119,7 @@ export const getChainFullName = (chainId) => {
       </div>
     case 137:
       return <div className='flex flex-row items-center gap-1'>
-        <div className='flex-shrink-0 bg-purple-500 p-1 rounded-lg'>
+        <div className='bg-purple-500 p-1 rounded-lg w-6 h-6 flex justify-center items-center'>
           <Avatar src={MATIC} alt='matic' className='w-3' />
         </div>
         <p className='whitespace-nowrap font-semibold text-sm hidden md:flex'>Polygon</p>
@@ -127,7 +127,7 @@ export const getChainFullName = (chainId) => {
       </div>
     case 25:
       return <div className='flex flex-row items-center gap-1'>
-        <div className='flex-shrink-0 bg-blue-800 p-1 rounded-lg'>
+        <div className='bg-blue-800 p-1 rounded-lg w-6 h-6 flex justify-center items-center'>
           <Avatar src={Cronos} alt='matic' className='w-3' />
         </div>
         <p className='whitespace-nowrap font-semibold text-sm hidden md:flex'>Cronos</p>
@@ -135,7 +135,7 @@ export const getChainFullName = (chainId) => {
       </div>
     case 42161:
       return <div className='flex flex-row items-center gap-1'>
-        <div className='flex-shrink-0 bg-blue-600 p-1 rounded-lg'>
+        <div className='bg-blue-600 p-1 rounded-lg w-6 h-6 flex justify-center items-center'>
           <Avatar src={Arbitrum} alt='matic' className='w-3' />
         </div>
         <p className='whitespace-nowrap font-semibold text-sm hidden md:flex'>Arbitrum</p>

@@ -6,6 +6,7 @@ import Input from 'components/Input'
 import Button from 'components/Button'
 import Alert from 'components/Alerts'
 import AddressComponent from 'components/CryptoComponents/AddressComponent'
+import { apiErrorFilter } from 'utils/Helpers'
 import { useToast } from 'hooks/useToast'
 import { BiCopy } from 'react-icons/bi'
 import { getExplorerURL } from 'utils/WalletHelpers'
@@ -22,18 +23,8 @@ const Index = () => {
     if (nameToResolve !== '') {
       setIsLoading(true)
       const getAddress = await resolveUDName(nameToResolve)
-      if (getAddress.name === null) {
-        setData({ status: 404, address: null })
-        setIsLoading(false)
-      } else if ('message' in getAddress) {
-        if (String(getAddress.message).includes('not registered')) {
-          setData({ status: 404, address: 'not_registered' })
-          setIsLoading(false)
-        }
-      } else {
-        setData({ status: 200, getAddress })
-        setIsLoading(false)
-      }
+      setData(getAddress)
+      setIsLoading(false)
     } else {
       toast('error', 'შეიყვანეთ მისამართი!')
     }
@@ -56,17 +47,17 @@ const Index = () => {
           <div className='mt-3'>
             {Object.keys(data).length > 0 && (
               <div>
-                {data.status === 200 ? (
+                {data.status === 200 && data.data.hasOwnProperty('address') ? (
                   <div>
                     <Card>
                       <div className='p-2'>
                         <div className='flex items-center gap-1'>
                           <Typography>მისამართი: </Typography>
-                          <AddressComponent address={data.getAddress.address} type='wallet' chain={'ETH'} />
+                          <AddressComponent address={data.data.address} type='wallet' chain={'ETH'} />
                         </div>
                         <div className='flex items-center gap-1'>
                           <Typography>სახელი: </Typography>
-                          <a href={getExplorerURL('wallet', data.getAddress.address, 1)} target='_blank' rel='noreferrer'>
+                          <a href={getExplorerURL('wallet', data.data.address, 1)} target='_blank' rel='noreferrer'>
                             <Typography className='hover:underline'>{document.getElementById('name').value}</Typography>
                           </a>
                           <Typography onClick={() => copyData(document.getElementById('name').value)} className='cursor-pointer'>
@@ -78,11 +69,7 @@ const Index = () => {
                   </div>
                 ) : (
                   <div className='mt-2'>
-                    {data.status === 404 && data.address === 'not_registered' && (
-                      <div>
-                        <Alert variant='error' text='სახელი რეგისტრირებული არაა!' />
-                      </div>
-                    )}
+                    {apiErrorFilter(data.data.message)}
                   </div>
                 )}
               </div>

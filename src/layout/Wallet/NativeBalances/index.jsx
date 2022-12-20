@@ -7,13 +7,12 @@ import { useWeb3React } from '@web3-react/core'
 const NativeBalances = () => {
   const { account, active } = useWeb3React()
   const [nativeCrossChainBalance, setNativeCrossChainBalance] = useState([])
-  const [isLoading, setIsLoading] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   const getData = async () => {
     setIsLoading(true)
     setNativeCrossChainBalance([])
     const balances = await getWalletNativeCrossChainBalance(account)
-    console.log(balances)
     setNativeCrossChainBalance(balances)
     setIsLoading(false)
   }

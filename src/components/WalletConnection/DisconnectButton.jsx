@@ -42,10 +42,10 @@ export default function DisconnectButton() {
 				<div className='p-3'>
 					<div className='border border-lightBorder dark:border-darkBorder w-full rounded-xl p-3'>
 						<Typtography className='text-sm font-semibold'>დაკავშირებულია - {wallet}</Typtography>
-						<div className='flex items-center gap-2 py-3'>
+						<div className='flex items-center p-2 mt-2 mb-2 rounded-lg bg-lightBorder dark:bg-darkBorder'>
 							<p className='text-lightText dark:text-darkText font-bold text-sm'>{shortAddress(account, 10)}</p>
 						</div>
-						<div className='flex items-center gap-3'>
+						<div className='flex items-center justify-between gap-3'>
 							<div className='flex items-center gap-1 text-lightText dark:text-darkText font-semibold'>
 								<FiExternalLink className='mb-1' />
 								<a href={getExplorerURL('wallet', account, chainId)} target='_blank' rel='noreferrer' className='flex items-center gap-1 duration-150 cursor-pointer text-sm'>ნახე Explorer-ზე</a>

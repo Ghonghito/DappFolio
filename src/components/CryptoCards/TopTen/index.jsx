@@ -22,7 +22,7 @@ const Index = () => {
         <div>
           {topCoins.status === 200 ? (
             <div>
-              <Card title='TOP კრიპტოვალუტები' variant='collapsible'>
+              <Card title='TOP კრიპტოვალუტები'>
                 <div>
                   <div className='flex flex-col overflow-y-auto'>
                     <table className='text-sm text-left'>
